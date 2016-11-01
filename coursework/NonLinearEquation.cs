@@ -17,8 +17,8 @@ namespace coursework
     {
 
         //  class fields
-        private double left_interval;
-        private double right_interval;
+        private double left_bp;
+        private double right_bp;
         private double epsilon;
 
         /// <summary>
@@ -29,22 +29,41 @@ namespace coursework
         /// <param name="eps">Approximation</param>
         public NonLinearEquation(double left, double right, double eps)
         {
-            this.left_interval = left;
-            this.right_interval = right;
+            this.leftBoundaryPoint = left;
+            this.rightBoundaryPoint = right;
             this.epsilon = eps;
+        }
+
+        public NonLinearEquation()
+        { 
+            //  empty constructor
+        }
+
+
+        public double leftBoundaryPoint
+        {
+            get { return this.left_bp; }
+            set { this.left_bp = value; }
+        }
+
+
+        public double rightBoundaryPoint
+        {
+            get { return this.right_bp; }
+            set { this.right_bp = value; }
         }
 
         /// <summary>
         /// Calculates approximate root of given one-variable equation
         /// </summary>
         /// <returns></returns>
-        public double solveByIterationsMethod()
+        public float solveByIterationsMethod()
         { 
             double x_current, x_previous;
             int i = 0;
 
-            //  calculate
-            x_current = (this.right_interval - this.left_interval) / 2;
+            //  calculate the first one based on given intervals ([0, 0.85] in current case)
+            x_current = (this.rightBoundaryPoint - this.leftBoundaryPoint) / 2;
     
             do
             {
@@ -52,7 +71,8 @@ namespace coursework
                 x_current = (1 / (9 + Math.Sin(3.6 * x_previous)));
             } while(Math.Abs(x_current - x_previous) > this.epsilon);
 
-            return x_current;
+            return (float)x_current;
         }
+
     }
 }
