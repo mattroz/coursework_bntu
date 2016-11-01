@@ -29,9 +29,9 @@ namespace coursework
         /// <param name="eps">Approximation</param>
         public NonLinearEquation(double left, double right, double eps)
         {
-            this.leftBoundaryPoint = left;
-            this.rightBoundaryPoint = right;
-            this.epsilon = eps;
+            leftBoundaryPoint = left;
+            rightBoundaryPoint = right;
+            epsilon = eps;
         }
 
         public NonLinearEquation()
@@ -42,8 +42,8 @@ namespace coursework
 
         public double leftBoundaryPoint
         {
-            get { return this.left_bp; }
-            set { this.left_bp = value; }
+            get { return left_bp; }
+            set { left_bp = value; }
         }
 
 
@@ -76,7 +76,7 @@ namespace coursework
             {
                 x_previous = x_current;
                 x_current = (1 / (9 + Math.Sin(3.6 * x_previous)));
-            } while(Math.Abs(x_current - x_previous) > this.epsilon);
+            } while(Math.Abs(x_current - x_previous) > epsilon);
 
             return (float)x_current;
         }

@@ -23,6 +23,8 @@ namespace coursework
            // textBox1.Text = nle.solveByIterationsMethod().ToString();
         }
 
+        /*         NON-LINEAR EQUATION UI IMPLEMENTATION         */
+
         private void nle_setVariablesButton_Click(object sender, EventArgs e)
         {
             NonLinearEquation nle = new NonLinearEquation();
@@ -69,37 +71,19 @@ namespace coursework
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        /*       QUADRATICS EQUATION UI IMPLEMENTATION       */
+
+        private void qe_setVariableButton_Click(object sender, EventArgs e)
         {
+            QuadraticEquation qe = new QuadraticEquation();
+            qe.setCoefficients(Convert.ToDouble(qe_firstCoeffTB.Text),
+                                Convert.ToDouble(qe_secondCoeffTB.Text),
+                                Convert.ToDouble(qe_thirdCoeffTB.Text));
+
 
         }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void leftBoundaryPoint_TB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         
-
-        
-
-        
-
         
     }
 }
