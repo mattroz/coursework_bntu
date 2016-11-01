@@ -17,12 +17,6 @@ namespace coursework
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           // NonLinearEquation nle = new NonLinearEquation(0.0, 0.85, 0.0001);
-           // textBox1.Text = nle.solveByIterationsMethod().ToString();
-        }
-
         /*         NON-LINEAR EQUATION UI IMPLEMENTATION         */
 
         private void nle_setVariablesButton_Click(object sender, EventArgs e)

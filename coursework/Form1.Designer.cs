@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -39,7 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nle_setVariablesButton = new System.Windows.Forms.Button();
+            this.nle_calculatetVariablesButton = new System.Windows.Forms.Button();
             this.epsilon_TB = new System.Windows.Forms.TextBox();
             this.rightBoundaryPoint_TB = new System.Windows.Forms.TextBox();
             this.leftBoundaryPoint_TB = new System.Windows.Forms.TextBox();
@@ -52,7 +50,7 @@
             this.qe_answerHolder = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.qe_setVariableButton = new System.Windows.Forms.Button();
+            this.qe_calculateVariableButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,7 +62,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,25 +72,7 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(92, 128);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(81, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -121,7 +100,7 @@
             // 
             this.nle_answerHolder.AutoSize = true;
             this.nle_answerHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nle_answerHolder.Location = new System.Drawing.Point(97, 31);
+            this.nle_answerHolder.Location = new System.Drawing.Point(99, 26);
             this.nle_answerHolder.Name = "nle_answerHolder";
             this.nle_answerHolder.Size = new System.Drawing.Size(0, 20);
             this.nle_answerHolder.TabIndex = 6;
@@ -142,7 +121,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.nle_setVariablesButton);
+            this.panel2.Controls.Add(this.nle_calculatetVariablesButton);
             this.panel2.Controls.Add(this.epsilon_TB);
             this.panel2.Controls.Add(this.rightBoundaryPoint_TB);
             this.panel2.Controls.Add(this.leftBoundaryPoint_TB);
@@ -183,15 +162,15 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "[ a ;";
             // 
-            // nle_setVariablesButton
+            // nle_calculatetVariablesButton
             // 
-            this.nle_setVariablesButton.Location = new System.Drawing.Point(57, 76);
-            this.nle_setVariablesButton.Name = "nle_setVariablesButton";
-            this.nle_setVariablesButton.Size = new System.Drawing.Size(75, 23);
-            this.nle_setVariablesButton.TabIndex = 5;
-            this.nle_setVariablesButton.Text = "SET";
-            this.nle_setVariablesButton.UseVisualStyleBackColor = true;
-            this.nle_setVariablesButton.Click += new System.EventHandler(this.nle_setVariablesButton_Click);
+            this.nle_calculatetVariablesButton.Location = new System.Drawing.Point(57, 76);
+            this.nle_calculatetVariablesButton.Name = "nle_calculatetVariablesButton";
+            this.nle_calculatetVariablesButton.Size = new System.Drawing.Size(77, 23);
+            this.nle_calculatetVariablesButton.TabIndex = 5;
+            this.nle_calculatetVariablesButton.Text = "CALCULATE";
+            this.nle_calculatetVariablesButton.UseVisualStyleBackColor = true;
+            this.nle_calculatetVariablesButton.Click += new System.EventHandler(this.nle_setVariablesButton_Click);
             // 
             // epsilon_TB
             // 
@@ -281,7 +260,7 @@
             // 
             this.qe_answerHolder.AutoSize = true;
             this.qe_answerHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.qe_answerHolder.Location = new System.Drawing.Point(97, 31);
+            this.qe_answerHolder.Location = new System.Drawing.Point(96, 26);
             this.qe_answerHolder.Name = "qe_answerHolder";
             this.qe_answerHolder.Size = new System.Drawing.Size(0, 20);
             this.qe_answerHolder.TabIndex = 6;
@@ -299,7 +278,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.qe_setVariableButton);
+            this.panel5.Controls.Add(this.qe_calculateVariableButton);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label10);
@@ -313,15 +292,15 @@
             this.panel5.Size = new System.Drawing.Size(239, 109);
             this.panel5.TabIndex = 8;
             // 
-            // qe_setVariableButton
+            // qe_calculateVariableButton
             // 
-            this.qe_setVariableButton.Location = new System.Drawing.Point(78, 76);
-            this.qe_setVariableButton.Name = "qe_setVariableButton";
-            this.qe_setVariableButton.Size = new System.Drawing.Size(75, 23);
-            this.qe_setVariableButton.TabIndex = 9;
-            this.qe_setVariableButton.Text = "SET";
-            this.qe_setVariableButton.UseVisualStyleBackColor = true;
-            this.qe_setVariableButton.Click += new System.EventHandler(this.qe_setVariableButton_Click);
+            this.qe_calculateVariableButton.Location = new System.Drawing.Point(78, 76);
+            this.qe_calculateVariableButton.Name = "qe_calculateVariableButton";
+            this.qe_calculateVariableButton.Size = new System.Drawing.Size(84, 23);
+            this.qe_calculateVariableButton.TabIndex = 9;
+            this.qe_calculateVariableButton.Text = "CALCULATE";
+            this.qe_calculateVariableButton.UseVisualStyleBackColor = true;
+            this.qe_calculateVariableButton.Click += new System.EventHandler(this.qe_setVariableButton_Click);
             // 
             // label8
             // 
@@ -424,24 +403,11 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Time function";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.AccessibleName = "";
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Location = new System.Drawing.Point(525, 367);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(258, 232);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Debug frame";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 611);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(795, 354);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -463,20 +429,15 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
@@ -485,7 +446,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button nle_setVariablesButton;
+        private System.Windows.Forms.Button nle_calculatetVariablesButton;
         private System.Windows.Forms.TextBox epsilon_TB;
         private System.Windows.Forms.TextBox rightBoundaryPoint_TB;
         private System.Windows.Forms.TextBox leftBoundaryPoint_TB;
@@ -507,7 +468,7 @@
         private System.Windows.Forms.TextBox qe_secondCoeffTB;
         private System.Windows.Forms.TextBox qe_firstCoeffTB;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button qe_setVariableButton;
+        private System.Windows.Forms.Button qe_calculateVariableButton;
     }
 }
 
