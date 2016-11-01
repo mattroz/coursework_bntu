@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+    GIVEN EQUATION: X - 1/(9 + SIN(3.6X)) = 0
+ */
+
 namespace coursework
 {
     /// <summary>
@@ -27,6 +31,24 @@ namespace coursework
             this.left_interval = left;
             this.right_interval = right;
             this.epsilon = eps;
+        }
+
+        /// <summary>
+        /// Calculates approximate root of given one-variable equation
+        /// </summary>
+        /// <returns></returns>
+        public float solveByIterationsMethod()
+        { 
+            float []x = new float[3];
+            int i = 0;
+
+            //  calculate
+            x[0] = (this.right_interval - this.left_interval) / 2;
+    
+            do
+            {
+                
+            } while(Math.Abs(x[i] - x[i - 1]) > this.epsilon);
         }
     }
 }
