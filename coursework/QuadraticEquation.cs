@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace coursework
 {
@@ -25,8 +26,14 @@ namespace coursework
         public float solveByDiscriminant()
         {
             double z1, z2;
-
+          
             discriminant = (coeff_b * coeff_b) - 4 * coeff_a * coeff_c;     //  regular discriminant expression 
+
+            if (discriminant < 0)
+            {
+                MessageBox.Show("Discriminant is negative, try another coefficients!");
+                return 0; 
+            }
 
             z1 = (-coeff_b + Math.Sqrt(discriminant)) / (2 * coeff_a);
             z2 = (-coeff_b - Math.Sqrt(discriminant)) / (2 * coeff_a);

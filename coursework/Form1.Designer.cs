@@ -52,6 +52,7 @@
             this.qe_answerHolder = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.qe_setVariableButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.qe_setVariableButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -313,6 +313,16 @@
             this.panel5.Size = new System.Drawing.Size(239, 109);
             this.panel5.TabIndex = 8;
             // 
+            // qe_setVariableButton
+            // 
+            this.qe_setVariableButton.Location = new System.Drawing.Point(78, 76);
+            this.qe_setVariableButton.Name = "qe_setVariableButton";
+            this.qe_setVariableButton.Size = new System.Drawing.Size(75, 23);
+            this.qe_setVariableButton.TabIndex = 9;
+            this.qe_setVariableButton.Text = "SET";
+            this.qe_setVariableButton.UseVisualStyleBackColor = true;
+            this.qe_setVariableButton.Click += new System.EventHandler(this.qe_setVariableButton_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -349,6 +359,7 @@
             this.qe_thirdCoeffTB.Name = "qe_thirdCoeffTB";
             this.qe_thirdCoeffTB.Size = new System.Drawing.Size(39, 20);
             this.qe_thirdCoeffTB.TabIndex = 4;
+            this.qe_thirdCoeffTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qe_thirdCoeffTB_KeyPress);
             // 
             // qe_secondCoeffTB
             // 
@@ -356,6 +367,7 @@
             this.qe_secondCoeffTB.Name = "qe_secondCoeffTB";
             this.qe_secondCoeffTB.Size = new System.Drawing.Size(37, 20);
             this.qe_secondCoeffTB.TabIndex = 3;
+            this.qe_secondCoeffTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qe_secondCoeffTB_KeyPress);
             // 
             // qe_firstCoeffTB
             // 
@@ -363,15 +375,16 @@
             this.qe_firstCoeffTB.Name = "qe_firstCoeffTB";
             this.qe_firstCoeffTB.Size = new System.Drawing.Size(37, 20);
             this.qe_firstCoeffTB.TabIndex = 2;
+            this.qe_firstCoeffTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qe_firstCoeffTB_KeyPress);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(10, 11);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 13);
+            this.label11.Size = new System.Drawing.Size(107, 13);
             this.label11.TabIndex = 1;
-            this.label11.Text = "SET VARIABLES";
+            this.label11.Text = "SET COEFFICIENTS";
             // 
             // panel4
             // 
@@ -422,16 +435,6 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Debug frame";
-            // 
-            // qe_setVariableButton
-            // 
-            this.qe_setVariableButton.Location = new System.Drawing.Point(78, 76);
-            this.qe_setVariableButton.Name = "qe_setVariableButton";
-            this.qe_setVariableButton.Size = new System.Drawing.Size(75, 23);
-            this.qe_setVariableButton.TabIndex = 9;
-            this.qe_setVariableButton.Text = "SET";
-            this.qe_setVariableButton.UseVisualStyleBackColor = true;
-            this.qe_setVariableButton.Click += new System.EventHandler(this.qe_setVariableButton_Click);
             // 
             // Form1
             // 
