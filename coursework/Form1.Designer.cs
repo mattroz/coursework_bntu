@@ -40,9 +40,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.leftBoundaryPoint_TB = new System.Windows.Forms.TextBox();
+            this.rightBoundaryPoint_TB = new System.Windows.Forms.TextBox();
+            this.epsilon_TB = new System.Windows.Forms.TextBox();
             this.nle_setVariablesButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -158,9 +158,9 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.nle_setVariablesButton);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.epsilon_TB);
+            this.panel2.Controls.Add(this.rightBoundaryPoint_TB);
+            this.panel2.Controls.Add(this.leftBoundaryPoint_TB);
             this.panel2.Controls.Add(this.label2);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(6, 125);
@@ -177,26 +177,30 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "SET VARIABLES";
             // 
-            // textBox2
+            // leftBoundaryPoint_TB
             // 
-            this.textBox2.Location = new System.Drawing.Point(29, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(37, 20);
-            this.textBox2.TabIndex = 2;
+            this.leftBoundaryPoint_TB.Location = new System.Drawing.Point(29, 50);
+            this.leftBoundaryPoint_TB.Name = "leftBoundaryPoint_TB";
+            this.leftBoundaryPoint_TB.Size = new System.Drawing.Size(37, 20);
+            this.leftBoundaryPoint_TB.TabIndex = 2;
+            this.leftBoundaryPoint_TB.TextChanged += new System.EventHandler(this.leftBoundaryPoint_TB_TextChanged);
+            this.leftBoundaryPoint_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leftBoundaryPoint_TB_KeyPress);
             // 
-            // textBox3
+            // rightBoundaryPoint_TB
             // 
-            this.textBox3.Location = new System.Drawing.Point(79, 50);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(37, 20);
-            this.textBox3.TabIndex = 3;
+            this.rightBoundaryPoint_TB.Location = new System.Drawing.Point(79, 50);
+            this.rightBoundaryPoint_TB.Name = "rightBoundaryPoint_TB";
+            this.rightBoundaryPoint_TB.Size = new System.Drawing.Size(37, 20);
+            this.rightBoundaryPoint_TB.TabIndex = 3;
+            this.rightBoundaryPoint_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rightBoundaryPoint_TB_KeyPress);
             // 
-            // textBox4
+            // epsilon_TB
             // 
-            this.textBox4.Location = new System.Drawing.Point(122, 50);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(55, 20);
-            this.textBox4.TabIndex = 4;
+            this.epsilon_TB.Location = new System.Drawing.Point(122, 50);
+            this.epsilon_TB.Name = "epsilon_TB";
+            this.epsilon_TB.Size = new System.Drawing.Size(55, 20);
+            this.epsilon_TB.TabIndex = 4;
+            this.epsilon_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.epsilon_TB_KeyPress);
             // 
             // nle_setVariablesButton
             // 
@@ -305,9 +309,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button nle_setVariablesButton;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox epsilon_TB;
+        private System.Windows.Forms.TextBox rightBoundaryPoint_TB;
+        private System.Windows.Forms.TextBox leftBoundaryPoint_TB;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label nle_answerHolder;
         private System.Windows.Forms.Label label6;

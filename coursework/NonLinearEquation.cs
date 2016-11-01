@@ -53,6 +53,13 @@ namespace coursework
             set { this.right_bp = value; }
         }
 
+
+        public double Epsilon
+        {
+            get { return this.epsilon; }
+            set { this.epsilon = value; }
+        }
+
         /// <summary>
         /// Calculates approximate root of given one-variable equation
         /// </summary>
