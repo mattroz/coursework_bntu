@@ -15,10 +15,11 @@ namespace coursework
     /// </summary>
     class NonLinearEquation
     {
+
         //  class fields
-        private float left_interval;
-        private float right_interval;
-        private float epsilon;
+        private double left_interval;
+        private double right_interval;
+        private double epsilon;
 
         /// <summary>
         /// Constructor
@@ -26,7 +27,7 @@ namespace coursework
         /// <param name="left">Left root interval</param>
         /// <param name="right">Right root interval</param>
         /// <param name="eps">Approximation</param>
-        NonLinearEquation(float left, float right, float eps)
+        public NonLinearEquation(double left, double right, double eps)
         {
             this.left_interval = left;
             this.right_interval = right;
@@ -37,18 +38,21 @@ namespace coursework
         /// Calculates approximate root of given one-variable equation
         /// </summary>
         /// <returns></returns>
-        public float solveByIterationsMethod()
+        public double solveByIterationsMethod()
         { 
-            float []x = new float[3];
+            double x_current, x_previous;
             int i = 0;
 
             //  calculate
-            x[0] = (this.right_interval - this.left_interval) / 2;
+            x_current = (this.right_interval - this.left_interval) / 2;
     
             do
             {
-                
-            } while(Math.Abs(x[i] - x[i - 1]) > this.epsilon);
+                x_previous = x_current;
+                x_current = (1 / (9 + Math.Sin(3.6 * x_previous)));
+            } while(Math.Abs(x_current - x_previous) > this.epsilon);
+
+            return x_current;
         }
     }
 }
