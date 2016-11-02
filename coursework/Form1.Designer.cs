@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -62,10 +65,18 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pe_logBox = new System.Windows.Forms.ListBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.pe_answerHolder = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pe_calculateVariableButton = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pe_fourthCoeff_TB = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -74,18 +85,11 @@
             this.pe_firstCoeff_TB = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pe_fourthCoeff_TB = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label15 = new System.Windows.Forms.Label();
-            this.pe_logBox = new System.Windows.Forms.ListBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,12 +101,14 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -445,6 +451,42 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Time function";
             // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.pe_logBox);
+            this.panel10.Controls.Add(this.label20);
+            this.panel10.Location = new System.Drawing.Point(249, 19);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(152, 314);
+            this.panel10.TabIndex = 12;
+            // 
+            // pe_logBox
+            // 
+            this.pe_logBox.FormattingEnabled = true;
+            this.pe_logBox.Location = new System.Drawing.Point(6, 24);
+            this.pe_logBox.Name = "pe_logBox";
+            this.pe_logBox.Size = new System.Drawing.Size(137, 277);
+            this.pe_logBox.TabIndex = 5;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 8);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(29, 13);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "LOG";
+            // 
+            // pe_answerHolder
+            // 
+            this.pe_answerHolder.AutoSize = true;
+            this.pe_answerHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.pe_answerHolder.Location = new System.Drawing.Point(282, 286);
+            this.pe_answerHolder.Name = "pe_answerHolder";
+            this.pe_answerHolder.Size = new System.Drawing.Size(0, 20);
+            this.pe_answerHolder.TabIndex = 6;
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -457,14 +499,46 @@
             this.panel8.Size = new System.Drawing.Size(239, 80);
             this.panel8.TabIndex = 11;
             // 
-            // pe_answerHolder
+            // label15
             // 
-            this.pe_answerHolder.AutoSize = true;
-            this.pe_answerHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pe_answerHolder.Location = new System.Drawing.Point(282, 286);
-            this.pe_answerHolder.Name = "pe_answerHolder";
-            this.pe_answerHolder.Size = new System.Drawing.Size(0, 20);
-            this.pe_answerHolder.TabIndex = 6;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(10, 8);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(110, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "MANAGE SETTINGS";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(9, 49);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(101, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "real time plotting";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(9, 29);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(124, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "machine time plotting";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // pe_calculateVariableButton
+            // 
+            this.pe_calculateVariableButton.Location = new System.Drawing.Point(145, 43);
+            this.pe_calculateVariableButton.Name = "pe_calculateVariableButton";
+            this.pe_calculateVariableButton.Size = new System.Drawing.Size(79, 23);
+            this.pe_calculateVariableButton.TabIndex = 9;
+            this.pe_calculateVariableButton.Text = "CALCULATE";
+            this.pe_calculateVariableButton.UseVisualStyleBackColor = true;
+            this.pe_calculateVariableButton.Click += new System.EventHandler(this.pe_calculateVariableButton_Click);
             // 
             // panel9
             // 
@@ -485,15 +559,23 @@
             this.panel9.Size = new System.Drawing.Size(239, 109);
             this.panel9.TabIndex = 10;
             // 
-            // pe_calculateVariableButton
+            // label14
             // 
-            this.pe_calculateVariableButton.Location = new System.Drawing.Point(145, 43);
-            this.pe_calculateVariableButton.Name = "pe_calculateVariableButton";
-            this.pe_calculateVariableButton.Size = new System.Drawing.Size(79, 23);
-            this.pe_calculateVariableButton.TabIndex = 9;
-            this.pe_calculateVariableButton.Text = "CALCULATE";
-            this.pe_calculateVariableButton.UseVisualStyleBackColor = true;
-            this.pe_calculateVariableButton.Click += new System.EventHandler(this.pe_calculateVariableButton_Click);
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(80, 64);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 16);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "d";
+            // 
+            // pe_fourthCoeff_TB
+            // 
+            this.pe_fourthCoeff_TB.Location = new System.Drawing.Point(83, 79);
+            this.pe_fourthCoeff_TB.Name = "pe_fourthCoeff_TB";
+            this.pe_fourthCoeff_TB.ShortcutsEnabled = false;
+            this.pe_fourthCoeff_TB.Size = new System.Drawing.Size(68, 20);
+            this.pe_fourthCoeff_TB.TabIndex = 10;
             // 
             // label16
             // 
@@ -569,6 +651,16 @@
             this.panel7.Size = new System.Drawing.Size(230, 113);
             this.panel7.TabIndex = 8;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(74, 65);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(72, 41);
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -588,101 +680,34 @@
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
-            // pe_fourthCoeff_TB
-            // 
-            this.pe_fourthCoeff_TB.Location = new System.Drawing.Point(83, 79);
-            this.pe_fourthCoeff_TB.Name = "pe_fourthCoeff_TB";
-            this.pe_fourthCoeff_TB.ShortcutsEnabled = false;
-            this.pe_fourthCoeff_TB.Size = new System.Drawing.Size(68, 20);
-            this.pe_fourthCoeff_TB.TabIndex = 10;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(80, 64);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(16, 16);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "d";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(74, 65);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(72, 41);
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(9, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(124, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "machine time plotting";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(9, 49);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(101, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "real time plotting";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(10, 8);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(110, 13);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "MANAGE SETTINGS";
-            // 
-            // pe_logBox
-            // 
-            this.pe_logBox.FormattingEnabled = true;
-            this.pe_logBox.Location = new System.Drawing.Point(6, 24);
-            this.pe_logBox.Name = "pe_logBox";
-            this.pe_logBox.Size = new System.Drawing.Size(137, 277);
-            this.pe_logBox.TabIndex = 5;
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.pe_logBox);
-            this.panel10.Controls.Add(this.label20);
-            this.panel10.Location = new System.Drawing.Point(249, 19);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(152, 314);
-            this.panel10.TabIndex = 12;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 8);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(29, 13);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "LOG";
-            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.chart1);
             this.groupBox4.Location = new System.Drawing.Point(12, 362);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(887, 256);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Plot";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(9, 15);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(863, 235);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // Form1
             // 
@@ -713,16 +738,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -787,6 +814,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

@@ -37,6 +37,7 @@ namespace coursework
             return result;
         }
 
+
         /*         NON-LINEAR EQUATION UI IMPLEMENTATION         */
 
         private void nle_setVariablesButton_Click(object sender, EventArgs e)
@@ -109,16 +110,10 @@ namespace coursework
             pe_logBox.Items.Add(pe.calculateCurrentValue(3));
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void chart1_Click(object sender, EventArgs e)
         {
 
         }
-        
         
     }
 }
