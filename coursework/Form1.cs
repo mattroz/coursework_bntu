@@ -18,20 +18,12 @@ namespace coursework
         }
 
         /*          VALIDATION          */
+
         private bool isValid(KeyPressEventArgs _event)
         {
-            bool result;
-            //if ()
-            //{
-            //    return false;
-            //}
-            //else
-            //{
-            //    return true;
-            //}   
-
-            return (result = (Char.IsDigit(_event.KeyChar) || Char.IsControl(_event.KeyChar) 
-                    || _event.KeyChar == ',' || _event.KeyChar == '-') ? false : true);
+            bool result = (Char.IsDigit(_event.KeyChar) || Char.IsControl(_event.KeyChar) 
+                            || _event.KeyChar == ',' || _event.KeyChar == '-') ? false : true;
+            return result;
         }
 
         /*         NON-LINEAR EQUATION UI IMPLEMENTATION         */

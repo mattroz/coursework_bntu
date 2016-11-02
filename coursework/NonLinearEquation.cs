@@ -70,7 +70,7 @@ namespace coursework
             int i = 0;
 
             //  calculate the first one based on given intervals ([0, 0.85] in current case)
-            x_current = (this.rightBoundaryPoint - this.leftBoundaryPoint) / 2;
+            x_current = (this.right_bp - this.left_bp) / 2;
     
             do
             {

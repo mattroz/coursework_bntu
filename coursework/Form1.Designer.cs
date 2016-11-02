@@ -176,6 +176,7 @@
             // 
             this.epsilon_TB.Location = new System.Drawing.Point(122, 50);
             this.epsilon_TB.Name = "epsilon_TB";
+            this.epsilon_TB.ShortcutsEnabled = false;
             this.epsilon_TB.Size = new System.Drawing.Size(55, 20);
             this.epsilon_TB.TabIndex = 4;
             this.epsilon_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.epsilon_TB_KeyPress);
@@ -184,6 +185,7 @@
             // 
             this.rightBoundaryPoint_TB.Location = new System.Drawing.Point(79, 50);
             this.rightBoundaryPoint_TB.Name = "rightBoundaryPoint_TB";
+            this.rightBoundaryPoint_TB.ShortcutsEnabled = false;
             this.rightBoundaryPoint_TB.Size = new System.Drawing.Size(37, 20);
             this.rightBoundaryPoint_TB.TabIndex = 3;
             this.rightBoundaryPoint_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rightBoundaryPoint_TB_KeyPress);
@@ -192,6 +194,7 @@
             // 
             this.leftBoundaryPoint_TB.Location = new System.Drawing.Point(29, 50);
             this.leftBoundaryPoint_TB.Name = "leftBoundaryPoint_TB";
+            this.leftBoundaryPoint_TB.ShortcutsEnabled = false;
             this.leftBoundaryPoint_TB.Size = new System.Drawing.Size(37, 20);
             this.leftBoundaryPoint_TB.TabIndex = 2;
             this.leftBoundaryPoint_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.leftBoundaryPoint_TB_KeyPress);
@@ -336,6 +339,7 @@
             // 
             this.qe_thirdCoeffTB.Location = new System.Drawing.Point(143, 50);
             this.qe_thirdCoeffTB.Name = "qe_thirdCoeffTB";
+            this.qe_thirdCoeffTB.ShortcutsEnabled = false;
             this.qe_thirdCoeffTB.Size = new System.Drawing.Size(39, 20);
             this.qe_thirdCoeffTB.TabIndex = 4;
             this.qe_thirdCoeffTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qe_thirdCoeffTB_KeyPress);
@@ -344,6 +348,7 @@
             // 
             this.qe_secondCoeffTB.Location = new System.Drawing.Point(100, 50);
             this.qe_secondCoeffTB.Name = "qe_secondCoeffTB";
+            this.qe_secondCoeffTB.ShortcutsEnabled = false;
             this.qe_secondCoeffTB.Size = new System.Drawing.Size(37, 20);
             this.qe_secondCoeffTB.TabIndex = 3;
             this.qe_secondCoeffTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qe_secondCoeffTB_KeyPress);
@@ -352,6 +357,7 @@
             // 
             this.qe_firstCoeffTB.Location = new System.Drawing.Point(57, 50);
             this.qe_firstCoeffTB.Name = "qe_firstCoeffTB";
+            this.qe_firstCoeffTB.ShortcutsEnabled = false;
             this.qe_firstCoeffTB.Size = new System.Drawing.Size(37, 20);
             this.qe_firstCoeffTB.TabIndex = 2;
             this.qe_firstCoeffTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qe_firstCoeffTB_KeyPress);
