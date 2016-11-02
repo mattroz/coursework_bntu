@@ -26,6 +26,8 @@ namespace coursework
             qe_thirdCoeffTB.Text = "-3";
 
             pe_fourthCoeff_TB.Text = "5";
+
+            machineTimeRB.Checked = true;
         }
 
         /*          VALIDATION          */
@@ -106,8 +108,19 @@ namespace coursework
             pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
             pe.dCoefficient = Convert.ToDouble(pe_fourthCoeff_TB.Text);
 
-            pe_answerHolder.Text = pe.calculateCurrentValue(3).ToString();
-            pe_logBox.Items.Add(pe.calculateCurrentValue(3));
+            float point = pe.calculateCurrentValue(3);
+            //float time_start = 3.0, time_finish = 12.0, time_quantum = 0.3;
+
+            pe_answerHolder.Text = point.ToString();
+            pe_logBox.Items.Add(point);
+
+            //for()
+            //{
+            
+            //}
+
+            //chart1.Series["Series1"].Points.AddXY(3);
+
         }
 
         private void chart1_Click(object sender, EventArgs e)

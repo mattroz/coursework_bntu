@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -71,9 +71,9 @@
             this.pe_answerHolder = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.pe_calculateVariableButton = new System.Windows.Forms.Button();
+            this.realTimeRB = new System.Windows.Forms.RadioButton();
+            this.machineTimeRB = new System.Windows.Forms.RadioButton();
+            this.pe_startPlottingButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.pe_fourthCoeff_TB = new System.Windows.Forms.TextBox();
@@ -90,6 +90,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,6 +115,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -118,7 +130,7 @@
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(215, 344);
+            this.groupBox1.Size = new System.Drawing.Size(215, 373);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Non-linear equation";
@@ -128,7 +140,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.nle_answerHolder);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(9, 253);
+            this.panel3.Location = new System.Drawing.Point(15, 287);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 80);
             this.panel3.TabIndex = 8;
@@ -166,7 +178,7 @@
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(9, 138);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 109);
+            this.panel2.Size = new System.Drawing.Size(200, 143);
             this.panel2.TabIndex = 7;
             // 
             // label5
@@ -281,7 +293,7 @@
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Location = new System.Drawing.Point(233, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(251, 344);
+            this.groupBox2.Size = new System.Drawing.Size(251, 373);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quadratic equation";
@@ -291,7 +303,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.qe_answerHolder);
             this.panel6.Controls.Add(this.label13);
-            this.panel6.Location = new System.Drawing.Point(6, 253);
+            this.panel6.Location = new System.Drawing.Point(6, 286);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(239, 80);
             this.panel6.TabIndex = 9;
@@ -329,7 +341,7 @@
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel5.Location = new System.Drawing.Point(6, 138);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(239, 109);
+            this.panel5.Size = new System.Drawing.Size(239, 142);
             this.panel5.TabIndex = 8;
             // 
             // qe_calculateVariableButton
@@ -446,7 +458,7 @@
             this.groupBox3.Controls.Add(this.panel7);
             this.groupBox3.Location = new System.Drawing.Point(490, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(409, 344);
+            this.groupBox3.Size = new System.Drawing.Size(409, 373);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Time function";
@@ -458,7 +470,7 @@
             this.panel10.Controls.Add(this.label20);
             this.panel10.Location = new System.Drawing.Point(249, 19);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(152, 314);
+            this.panel10.Size = new System.Drawing.Size(152, 347);
             this.panel10.TabIndex = 12;
             // 
             // pe_logBox
@@ -466,7 +478,7 @@
             this.pe_logBox.FormattingEnabled = true;
             this.pe_logBox.Location = new System.Drawing.Point(6, 24);
             this.pe_logBox.Name = "pe_logBox";
-            this.pe_logBox.Size = new System.Drawing.Size(137, 277);
+            this.pe_logBox.Size = new System.Drawing.Size(137, 316);
             this.pe_logBox.TabIndex = 5;
             // 
             // label20
@@ -491,10 +503,10 @@
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel8.Controls.Add(this.label15);
-            this.panel8.Controls.Add(this.radioButton2);
-            this.panel8.Controls.Add(this.radioButton1);
-            this.panel8.Controls.Add(this.pe_calculateVariableButton);
-            this.panel8.Location = new System.Drawing.Point(6, 253);
+            this.panel8.Controls.Add(this.realTimeRB);
+            this.panel8.Controls.Add(this.machineTimeRB);
+            this.panel8.Controls.Add(this.pe_startPlottingButton);
+            this.panel8.Location = new System.Drawing.Point(6, 286);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(239, 80);
             this.panel8.TabIndex = 11;
@@ -508,42 +520,48 @@
             this.label15.TabIndex = 10;
             this.label15.Text = "MANAGE SETTINGS";
             // 
-            // radioButton2
+            // realTimeRB
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(9, 49);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(101, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "real time plotting";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.realTimeRB.AutoSize = true;
+            this.realTimeRB.Location = new System.Drawing.Point(9, 49);
+            this.realTimeRB.Name = "realTimeRB";
+            this.realTimeRB.Size = new System.Drawing.Size(101, 17);
+            this.realTimeRB.TabIndex = 1;
+            this.realTimeRB.TabStop = true;
+            this.realTimeRB.Text = "real time plotting";
+            this.realTimeRB.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // machineTimeRB
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(9, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(124, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "machine time plotting";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.machineTimeRB.AutoSize = true;
+            this.machineTimeRB.Location = new System.Drawing.Point(9, 29);
+            this.machineTimeRB.Name = "machineTimeRB";
+            this.machineTimeRB.Size = new System.Drawing.Size(124, 17);
+            this.machineTimeRB.TabIndex = 0;
+            this.machineTimeRB.TabStop = true;
+            this.machineTimeRB.Text = "machine time plotting";
+            this.machineTimeRB.UseVisualStyleBackColor = true;
             // 
-            // pe_calculateVariableButton
+            // pe_startPlottingButton
             // 
-            this.pe_calculateVariableButton.Location = new System.Drawing.Point(145, 43);
-            this.pe_calculateVariableButton.Name = "pe_calculateVariableButton";
-            this.pe_calculateVariableButton.Size = new System.Drawing.Size(79, 23);
-            this.pe_calculateVariableButton.TabIndex = 9;
-            this.pe_calculateVariableButton.Text = "CALCULATE";
-            this.pe_calculateVariableButton.UseVisualStyleBackColor = true;
-            this.pe_calculateVariableButton.Click += new System.EventHandler(this.pe_calculateVariableButton_Click);
+            this.pe_startPlottingButton.Location = new System.Drawing.Point(145, 43);
+            this.pe_startPlottingButton.Name = "pe_startPlottingButton";
+            this.pe_startPlottingButton.Size = new System.Drawing.Size(79, 23);
+            this.pe_startPlottingButton.TabIndex = 9;
+            this.pe_startPlottingButton.Text = "PLOTTING";
+            this.pe_startPlottingButton.UseVisualStyleBackColor = true;
+            this.pe_startPlottingButton.Click += new System.EventHandler(this.pe_calculateVariableButton_Click);
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.numericUpDown3);
+            this.panel9.Controls.Add(this.numericUpDown2);
+            this.panel9.Controls.Add(this.numericUpDown1);
+            this.panel9.Controls.Add(this.pictureBox7);
+            this.panel9.Controls.Add(this.pictureBox6);
+            this.panel9.Controls.Add(this.pictureBox5);
             this.panel9.Controls.Add(this.label14);
             this.panel9.Controls.Add(this.pe_fourthCoeff_TB);
             this.panel9.Controls.Add(this.label16);
@@ -556,14 +574,14 @@
             this.panel9.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel9.Location = new System.Drawing.Point(6, 138);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(239, 109);
+            this.panel9.Size = new System.Drawing.Size(239, 142);
             this.panel9.TabIndex = 10;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(80, 64);
+            this.label14.Location = new System.Drawing.Point(11, 113);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(16, 16);
             this.label14.TabIndex = 11;
@@ -571,17 +589,17 @@
             // 
             // pe_fourthCoeff_TB
             // 
-            this.pe_fourthCoeff_TB.Location = new System.Drawing.Point(83, 79);
+            this.pe_fourthCoeff_TB.Location = new System.Drawing.Point(32, 109);
             this.pe_fourthCoeff_TB.Name = "pe_fourthCoeff_TB";
             this.pe_fourthCoeff_TB.ShortcutsEnabled = false;
-            this.pe_fourthCoeff_TB.Size = new System.Drawing.Size(68, 20);
+            this.pe_fourthCoeff_TB.Size = new System.Drawing.Size(64, 20);
             this.pe_fourthCoeff_TB.TabIndex = 10;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(154, 22);
+            this.label16.Location = new System.Drawing.Point(11, 84);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(15, 16);
             this.label16.TabIndex = 8;
@@ -591,7 +609,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(78, 22);
+            this.label17.Location = new System.Drawing.Point(10, 57);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(16, 16);
             this.label17.TabIndex = 7;
@@ -601,7 +619,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(10, 22);
+            this.label18.Location = new System.Drawing.Point(10, 31);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(16, 16);
             this.label18.TabIndex = 6;
@@ -609,26 +627,26 @@
             // 
             // pe_thirdCoeff_TB
             // 
-            this.pe_thirdCoeff_TB.Location = new System.Drawing.Point(157, 41);
+            this.pe_thirdCoeff_TB.Location = new System.Drawing.Point(32, 83);
             this.pe_thirdCoeff_TB.Name = "pe_thirdCoeff_TB";
             this.pe_thirdCoeff_TB.ShortcutsEnabled = false;
-            this.pe_thirdCoeff_TB.Size = new System.Drawing.Size(67, 20);
+            this.pe_thirdCoeff_TB.Size = new System.Drawing.Size(64, 20);
             this.pe_thirdCoeff_TB.TabIndex = 4;
             // 
             // pe_secondCoeff_TB
             // 
-            this.pe_secondCoeff_TB.Location = new System.Drawing.Point(81, 41);
+            this.pe_secondCoeff_TB.Location = new System.Drawing.Point(32, 57);
             this.pe_secondCoeff_TB.Name = "pe_secondCoeff_TB";
             this.pe_secondCoeff_TB.ShortcutsEnabled = false;
-            this.pe_secondCoeff_TB.Size = new System.Drawing.Size(70, 20);
+            this.pe_secondCoeff_TB.Size = new System.Drawing.Size(64, 20);
             this.pe_secondCoeff_TB.TabIndex = 3;
             // 
             // pe_firstCoeff_TB
             // 
-            this.pe_firstCoeff_TB.Location = new System.Drawing.Point(13, 41);
+            this.pe_firstCoeff_TB.Location = new System.Drawing.Point(32, 31);
             this.pe_firstCoeff_TB.Name = "pe_firstCoeff_TB";
             this.pe_firstCoeff_TB.ShortcutsEnabled = false;
-            this.pe_firstCoeff_TB.Size = new System.Drawing.Size(62, 20);
+            this.pe_firstCoeff_TB.Size = new System.Drawing.Size(64, 20);
             this.pe_firstCoeff_TB.TabIndex = 2;
             // 
             // label19
@@ -646,9 +664,9 @@
             this.panel7.Controls.Add(this.pictureBox4);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.pictureBox3);
-            this.panel7.Location = new System.Drawing.Point(13, 19);
+            this.panel7.Location = new System.Drawing.Point(6, 19);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(230, 113);
+            this.panel7.Size = new System.Drawing.Size(237, 113);
             this.panel7.TabIndex = 8;
             // 
             // pictureBox4
@@ -683,7 +701,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.chart1);
-            this.groupBox4.Location = new System.Drawing.Point(12, 362);
+            this.groupBox4.Location = new System.Drawing.Point(12, 391);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(887, 256);
             this.groupBox4.TabIndex = 5;
@@ -692,34 +710,82 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(9, 15);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(863, 235);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(145, 31);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(145, 61);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(145, 91);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(24, 27);
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(175, 32);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown1.TabIndex = 15;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(175, 65);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown2.TabIndex = 16;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(175, 98);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown3.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 640);
+            this.ClientSize = new System.Drawing.Size(903, 649);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "CourseWork";
             this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -750,6 +816,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -793,7 +865,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label pe_answerHolder;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button pe_calculateVariableButton;
+        private System.Windows.Forms.Button pe_startPlottingButton;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
@@ -807,14 +879,20 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox pe_fourthCoeff_TB;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton realTimeRB;
+        private System.Windows.Forms.RadioButton machineTimeRB;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListBox pe_logBox;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 
