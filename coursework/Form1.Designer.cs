@@ -37,7 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nle_calculatetVariablesButton = new System.Windows.Forms.Button();
+            this.nle_calculateVariablesButton = new System.Windows.Forms.Button();
             this.epsilon_TB = new System.Windows.Forms.TextBox();
             this.rightBoundaryPoint_TB = new System.Windows.Forms.TextBox();
             this.leftBoundaryPoint_TB = new System.Windows.Forms.TextBox();
@@ -62,6 +62,23 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.pe_answerHolder = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.pe_calculateVariableButton = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pe_thirdCoeff_TB = new System.Windows.Forms.TextBox();
+            this.pe_secondCoeff_TB = new System.Windows.Forms.TextBox();
+            this.pe_firstCoeff_TB = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,6 +89,11 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -121,7 +143,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.nle_calculatetVariablesButton);
+            this.panel2.Controls.Add(this.nle_calculateVariablesButton);
             this.panel2.Controls.Add(this.epsilon_TB);
             this.panel2.Controls.Add(this.rightBoundaryPoint_TB);
             this.panel2.Controls.Add(this.leftBoundaryPoint_TB);
@@ -162,15 +184,15 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "[ a ;";
             // 
-            // nle_calculatetVariablesButton
+            // nle_calculateVariablesButton
             // 
-            this.nle_calculatetVariablesButton.Location = new System.Drawing.Point(57, 76);
-            this.nle_calculatetVariablesButton.Name = "nle_calculatetVariablesButton";
-            this.nle_calculatetVariablesButton.Size = new System.Drawing.Size(77, 23);
-            this.nle_calculatetVariablesButton.TabIndex = 5;
-            this.nle_calculatetVariablesButton.Text = "CALCULATE";
-            this.nle_calculatetVariablesButton.UseVisualStyleBackColor = true;
-            this.nle_calculatetVariablesButton.Click += new System.EventHandler(this.nle_setVariablesButton_Click);
+            this.nle_calculateVariablesButton.Location = new System.Drawing.Point(57, 76);
+            this.nle_calculateVariablesButton.Name = "nle_calculateVariablesButton";
+            this.nle_calculateVariablesButton.Size = new System.Drawing.Size(77, 23);
+            this.nle_calculateVariablesButton.TabIndex = 5;
+            this.nle_calculateVariablesButton.Text = "CALCULATE";
+            this.nle_calculateVariablesButton.UseVisualStyleBackColor = true;
+            this.nle_calculateVariablesButton.Click += new System.EventHandler(this.nle_setVariablesButton_Click);
             // 
             // epsilon_TB
             // 
@@ -244,7 +266,7 @@
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Location = new System.Drawing.Point(233, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(277, 336);
+            this.groupBox2.Size = new System.Drawing.Size(251, 336);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quadratic equation";
@@ -402,18 +424,190 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(525, 12);
+            this.groupBox3.Controls.Add(this.panel8);
+            this.groupBox3.Controls.Add(this.panel9);
+            this.groupBox3.Controls.Add(this.panel7);
+            this.groupBox3.Location = new System.Drawing.Point(490, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(258, 336);
+            this.groupBox3.Size = new System.Drawing.Size(250, 336);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Time function";
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.pe_answerHolder);
+            this.panel8.Controls.Add(this.label15);
+            this.panel8.Location = new System.Drawing.Point(6, 240);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(239, 80);
+            this.panel8.TabIndex = 11;
+            // 
+            // pe_answerHolder
+            // 
+            this.pe_answerHolder.AutoSize = true;
+            this.pe_answerHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.pe_answerHolder.Location = new System.Drawing.Point(96, 26);
+            this.pe_answerHolder.Name = "pe_answerHolder";
+            this.pe_answerHolder.Size = new System.Drawing.Size(0, 20);
+            this.pe_answerHolder.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(10, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "ANSWER:";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.label14);
+            this.panel9.Controls.Add(this.textBox1);
+            this.panel9.Controls.Add(this.pe_calculateVariableButton);
+            this.panel9.Controls.Add(this.label16);
+            this.panel9.Controls.Add(this.label17);
+            this.panel9.Controls.Add(this.label18);
+            this.panel9.Controls.Add(this.pe_thirdCoeff_TB);
+            this.panel9.Controls.Add(this.pe_secondCoeff_TB);
+            this.panel9.Controls.Add(this.pe_firstCoeff_TB);
+            this.panel9.Controls.Add(this.label19);
+            this.panel9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel9.Location = new System.Drawing.Point(6, 125);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(239, 109);
+            this.panel9.TabIndex = 10;
+            // 
+            // pe_calculateVariableButton
+            // 
+            this.pe_calculateVariableButton.Location = new System.Drawing.Point(81, 76);
+            this.pe_calculateVariableButton.Name = "pe_calculateVariableButton";
+            this.pe_calculateVariableButton.Size = new System.Drawing.Size(79, 23);
+            this.pe_calculateVariableButton.TabIndex = 9;
+            this.pe_calculateVariableButton.Text = "CALCULATE";
+            this.pe_calculateVariableButton.UseVisualStyleBackColor = true;
+            this.pe_calculateVariableButton.Click += new System.EventHandler(this.pe_calculateVariableButton_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(154, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(15, 16);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "c";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(78, 22);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(16, 16);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "b";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(10, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(16, 16);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "a";
+            // 
+            // pe_thirdCoeff_TB
+            // 
+            this.pe_thirdCoeff_TB.Location = new System.Drawing.Point(157, 41);
+            this.pe_thirdCoeff_TB.Name = "pe_thirdCoeff_TB";
+            this.pe_thirdCoeff_TB.ShortcutsEnabled = false;
+            this.pe_thirdCoeff_TB.Size = new System.Drawing.Size(67, 20);
+            this.pe_thirdCoeff_TB.TabIndex = 4;
+            // 
+            // pe_secondCoeff_TB
+            // 
+            this.pe_secondCoeff_TB.Location = new System.Drawing.Point(81, 41);
+            this.pe_secondCoeff_TB.Name = "pe_secondCoeff_TB";
+            this.pe_secondCoeff_TB.ShortcutsEnabled = false;
+            this.pe_secondCoeff_TB.Size = new System.Drawing.Size(70, 20);
+            this.pe_secondCoeff_TB.TabIndex = 3;
+            // 
+            // pe_firstCoeff_TB
+            // 
+            this.pe_firstCoeff_TB.Location = new System.Drawing.Point(13, 41);
+            this.pe_firstCoeff_TB.Name = "pe_firstCoeff_TB";
+            this.pe_firstCoeff_TB.ShortcutsEnabled = false;
+            this.pe_firstCoeff_TB.Size = new System.Drawing.Size(62, 20);
+            this.pe_firstCoeff_TB.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(10, 9);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(107, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "SET COEFFICIENTS";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.pictureBox3);
+            this.panel7.Location = new System.Drawing.Point(13, 19);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(230, 100);
+            this.panel7.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "THE TASK";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(15, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(191, 41);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 79);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ShortcutsEnabled = false;
+            this.textBox1.Size = new System.Drawing.Size(62, 20);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(10, 64);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 16);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "d";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 354);
+            this.ClientSize = new System.Drawing.Size(795, 640);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -435,6 +629,14 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,7 +654,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button nle_calculatetVariablesButton;
+        private System.Windows.Forms.Button nle_calculateVariablesButton;
         private System.Windows.Forms.TextBox epsilon_TB;
         private System.Windows.Forms.TextBox rightBoundaryPoint_TB;
         private System.Windows.Forms.TextBox leftBoundaryPoint_TB;
@@ -475,6 +677,23 @@
         private System.Windows.Forms.TextBox qe_firstCoeffTB;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button qe_calculateVariableButton;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label pe_answerHolder;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button pe_calculateVariableButton;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox pe_thirdCoeff_TB;
+        private System.Windows.Forms.TextBox pe_secondCoeff_TB;
+        private System.Windows.Forms.TextBox pe_firstCoeff_TB;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

@@ -36,6 +36,7 @@ namespace coursework
             nle.Epsilon = Convert.ToDouble(epsilon_TB.Text);
 
             nle_answerHolder.Text = nle.solveByIterationsMethod().ToString();
+            pe_firstCoeff_TB.Text = nle_answerHolder.Text;
         }
 
         private void leftBoundaryPoint_TB_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,6 +65,7 @@ namespace coursework
                                 Convert.ToDouble(qe_thirdCoeffTB.Text));
 
             qe_answerHolder.Text = qe.solveByDiscriminant().ToString();
+            pe_secondCoeff_TB.Text = qe_answerHolder.Text;
 
         }
 
@@ -80,6 +82,22 @@ namespace coursework
         private void qe_thirdCoeffTB_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = isValid(e);
+        }
+
+        /*       POLYNOMIAL EQUATION UI IMPLEMENTATION       */
+
+        private void pe_calculateVariableButton_Click(object sender, EventArgs e)
+        {
+            PolinomialEquation pe = new PolinomialEquation();
+            pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
+            pe.bCoefficient = Convert.ToDouble(pe_secondCoeff_TB.Text);
+            pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
+            pe.dCoefficient = Convert.ToDouble();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
         
         
