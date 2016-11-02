@@ -15,6 +15,17 @@ namespace coursework
         public Form1()
         {
             InitializeComponent();
+
+            /*   DEFAULT SETTINGS   */
+            leftBoundaryPoint_TB.Text = "0";
+            rightBoundaryPoint_TB.Text = "0,85";
+            epsilon_TB.Text = "0,0001";
+
+            qe_firstCoeffTB.Text = "3";
+            qe_secondCoeffTB.Text = "3";
+            qe_thirdCoeffTB.Text = "-3";
+
+            pe_fourthCoeff_TB.Text = "5";
         }
 
         /*          VALIDATION          */
@@ -92,10 +103,18 @@ namespace coursework
             pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
             pe.bCoefficient = Convert.ToDouble(pe_secondCoeff_TB.Text);
             pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
-            pe.dCoefficient = Convert.ToDouble();
+            pe.dCoefficient = Convert.ToDouble(pe_fourthCoeff_TB.Text);
+
+            pe_answerHolder.Text = pe.calculateCurrentValue(3).ToString();
+            pe_logBox.Items.Add(pe.calculateCurrentValue(3));
         }
 
         private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
         {
 
         }

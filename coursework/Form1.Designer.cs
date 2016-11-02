@@ -64,7 +64,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pe_answerHolder = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pe_calculateVariableButton = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -77,8 +76,16 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pe_fourthCoeff_TB = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pe_logBox = new System.Windows.Forms.ListBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,6 +101,8 @@
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -103,7 +112,7 @@
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(215, 336);
+            this.groupBox1.Size = new System.Drawing.Size(215, 344);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Non-linear equation";
@@ -113,7 +122,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.nle_answerHolder);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(6, 240);
+            this.panel3.Location = new System.Drawing.Point(9, 253);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 80);
             this.panel3.TabIndex = 8;
@@ -149,7 +158,7 @@
             this.panel2.Controls.Add(this.leftBoundaryPoint_TB);
             this.panel2.Controls.Add(this.label2);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(6, 125);
+            this.panel2.Location = new System.Drawing.Point(9, 138);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 109);
             this.panel2.TabIndex = 7;
@@ -237,7 +246,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(6, 19);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(200, 113);
             this.panel1.TabIndex = 6;
             // 
             // pictureBox1
@@ -266,7 +275,7 @@
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Location = new System.Drawing.Point(233, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(251, 336);
+            this.groupBox2.Size = new System.Drawing.Size(251, 344);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quadratic equation";
@@ -276,7 +285,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.qe_answerHolder);
             this.panel6.Controls.Add(this.label13);
-            this.panel6.Location = new System.Drawing.Point(6, 240);
+            this.panel6.Location = new System.Drawing.Point(6, 253);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(239, 80);
             this.panel6.TabIndex = 9;
@@ -312,7 +321,7 @@
             this.panel5.Controls.Add(this.qe_firstCoeffTB);
             this.panel5.Controls.Add(this.label11);
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel5.Location = new System.Drawing.Point(6, 125);
+            this.panel5.Location = new System.Drawing.Point(6, 138);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(239, 109);
             this.panel5.TabIndex = 8;
@@ -400,7 +409,7 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Location = new System.Drawing.Point(6, 19);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(239, 100);
+            this.panel4.Size = new System.Drawing.Size(239, 113);
             this.panel4.TabIndex = 7;
             // 
             // pictureBox2
@@ -424,12 +433,14 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.panel10);
+            this.groupBox3.Controls.Add(this.pe_answerHolder);
             this.groupBox3.Controls.Add(this.panel8);
             this.groupBox3.Controls.Add(this.panel9);
             this.groupBox3.Controls.Add(this.panel7);
             this.groupBox3.Location = new System.Drawing.Point(490, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(250, 336);
+            this.groupBox3.Size = new System.Drawing.Size(409, 344);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Time function";
@@ -437,9 +448,11 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.pe_answerHolder);
             this.panel8.Controls.Add(this.label15);
-            this.panel8.Location = new System.Drawing.Point(6, 240);
+            this.panel8.Controls.Add(this.radioButton2);
+            this.panel8.Controls.Add(this.radioButton1);
+            this.panel8.Controls.Add(this.pe_calculateVariableButton);
+            this.panel8.Location = new System.Drawing.Point(6, 253);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(239, 80);
             this.panel8.TabIndex = 11;
@@ -448,27 +461,17 @@
             // 
             this.pe_answerHolder.AutoSize = true;
             this.pe_answerHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pe_answerHolder.Location = new System.Drawing.Point(96, 26);
+            this.pe_answerHolder.Location = new System.Drawing.Point(282, 286);
             this.pe_answerHolder.Name = "pe_answerHolder";
             this.pe_answerHolder.Size = new System.Drawing.Size(0, 20);
             this.pe_answerHolder.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(10, 31);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 13);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "ANSWER:";
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel9.Controls.Add(this.label14);
-            this.panel9.Controls.Add(this.textBox1);
-            this.panel9.Controls.Add(this.pe_calculateVariableButton);
+            this.panel9.Controls.Add(this.pe_fourthCoeff_TB);
             this.panel9.Controls.Add(this.label16);
             this.panel9.Controls.Add(this.label17);
             this.panel9.Controls.Add(this.label18);
@@ -477,14 +480,14 @@
             this.panel9.Controls.Add(this.pe_firstCoeff_TB);
             this.panel9.Controls.Add(this.label19);
             this.panel9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel9.Location = new System.Drawing.Point(6, 125);
+            this.panel9.Location = new System.Drawing.Point(6, 138);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(239, 109);
             this.panel9.TabIndex = 10;
             // 
             // pe_calculateVariableButton
             // 
-            this.pe_calculateVariableButton.Location = new System.Drawing.Point(81, 76);
+            this.pe_calculateVariableButton.Location = new System.Drawing.Point(145, 43);
             this.pe_calculateVariableButton.Name = "pe_calculateVariableButton";
             this.pe_calculateVariableButton.Size = new System.Drawing.Size(79, 23);
             this.pe_calculateVariableButton.TabIndex = 9;
@@ -558,11 +561,12 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.pictureBox4);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.pictureBox3);
             this.panel7.Location = new System.Drawing.Point(13, 19);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(230, 100);
+            this.panel7.Size = new System.Drawing.Size(230, 113);
             this.panel7.TabIndex = 8;
             // 
             // label12
@@ -580,34 +584,112 @@
             this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
             this.pictureBox3.Location = new System.Drawing.Point(15, 22);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(191, 41);
+            this.pictureBox3.Size = new System.Drawing.Size(191, 37);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
-            // textBox1
+            // pe_fourthCoeff_TB
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(62, 20);
-            this.textBox1.TabIndex = 10;
+            this.pe_fourthCoeff_TB.Location = new System.Drawing.Point(83, 79);
+            this.pe_fourthCoeff_TB.Name = "pe_fourthCoeff_TB";
+            this.pe_fourthCoeff_TB.ShortcutsEnabled = false;
+            this.pe_fourthCoeff_TB.Size = new System.Drawing.Size(68, 20);
+            this.pe_fourthCoeff_TB.TabIndex = 10;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(10, 64);
+            this.label14.Location = new System.Drawing.Point(80, 64);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(16, 16);
             this.label14.TabIndex = 11;
             this.label14.Text = "d";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(74, 65);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(72, 41);
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(9, 29);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(124, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "machine time plotting";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(9, 49);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(101, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "real time plotting";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(10, 8);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(110, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "MANAGE SETTINGS";
+            // 
+            // pe_logBox
+            // 
+            this.pe_logBox.FormattingEnabled = true;
+            this.pe_logBox.Location = new System.Drawing.Point(6, 24);
+            this.pe_logBox.Name = "pe_logBox";
+            this.pe_logBox.Size = new System.Drawing.Size(137, 277);
+            this.pe_logBox.TabIndex = 5;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.pe_logBox);
+            this.panel10.Controls.Add(this.label20);
+            this.panel10.Location = new System.Drawing.Point(249, 19);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(152, 314);
+            this.panel10.TabIndex = 12;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 8);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(29, 13);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "LOG";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Location = new System.Drawing.Point(12, 362);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(887, 256);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Plot";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 640);
+            this.ClientSize = new System.Drawing.Size(903, 640);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -630,6 +712,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -637,6 +720,9 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -679,7 +765,6 @@
         private System.Windows.Forms.Button qe_calculateVariableButton;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label pe_answerHolder;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button pe_calculateVariableButton;
         private System.Windows.Forms.Label label16;
@@ -693,7 +778,15 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pe_fourthCoeff_TB;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ListBox pe_logBox;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 
