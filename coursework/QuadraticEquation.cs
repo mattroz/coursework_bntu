@@ -22,7 +22,6 @@ namespace coursework
             coeff_c = c;
         }
 
-
         public float solveByDiscriminant()
         {
             double z1, z2;

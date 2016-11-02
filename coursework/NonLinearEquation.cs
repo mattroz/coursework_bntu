@@ -39,20 +39,17 @@ namespace coursework
             //  empty constructor
         }
 
-
         public double leftBoundaryPoint
         {
             get { return left_bp; }
             set { left_bp = value; }
         }
 
-
         public double rightBoundaryPoint
         {
             get { return this.right_bp; }
             set { this.right_bp = value; }
         }
-
 
         public double Epsilon
         {
@@ -67,7 +64,6 @@ namespace coursework
         public float solveByIterationsMethod()
         { 
             double x_current, x_previous;
-            int i = 0;
 
             //  calculate the first one based on given intervals ([0, 0.85] in current case)
             x_current = (this.right_bp - this.left_bp) / 2;
