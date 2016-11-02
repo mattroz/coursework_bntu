@@ -80,7 +80,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.pe_thirdCoeff_TB = new System.Windows.Forms.TextBox();
             this.pe_secondCoeff_TB = new System.Windows.Forms.TextBox();
             this.pe_firstCoeff_TB = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -96,6 +95,7 @@
             this.timeStart_NUD = new System.Windows.Forms.NumericUpDown();
             this.timeFinish_NUD = new System.Windows.Forms.NumericUpDown();
             this.timeQuantum_NUD = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -556,6 +556,7 @@
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.label21);
             this.panel9.Controls.Add(this.timeQuantum_NUD);
             this.panel9.Controls.Add(this.timeFinish_NUD);
             this.panel9.Controls.Add(this.timeStart_NUD);
@@ -567,7 +568,6 @@
             this.panel9.Controls.Add(this.label16);
             this.panel9.Controls.Add(this.label17);
             this.panel9.Controls.Add(this.label18);
-            this.panel9.Controls.Add(this.pe_thirdCoeff_TB);
             this.panel9.Controls.Add(this.pe_secondCoeff_TB);
             this.panel9.Controls.Add(this.pe_firstCoeff_TB);
             this.panel9.Controls.Add(this.label19);
@@ -624,14 +624,6 @@
             this.label18.Size = new System.Drawing.Size(16, 16);
             this.label18.TabIndex = 6;
             this.label18.Text = "a";
-            // 
-            // pe_thirdCoeff_TB
-            // 
-            this.pe_thirdCoeff_TB.Location = new System.Drawing.Point(32, 83);
-            this.pe_thirdCoeff_TB.Name = "pe_thirdCoeff_TB";
-            this.pe_thirdCoeff_TB.ShortcutsEnabled = false;
-            this.pe_thirdCoeff_TB.Size = new System.Drawing.Size(64, 20);
-            this.pe_thirdCoeff_TB.TabIndex = 4;
             // 
             // pe_secondCoeff_TB
             // 
@@ -720,7 +712,7 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.timeFunctionPlot.Series.Add(series1);
             this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
             this.timeFunctionPlot.TabIndex = 0;
@@ -770,10 +762,25 @@
             // 
             // timeQuantum_NUD
             // 
+            this.timeQuantum_NUD.DecimalPlaces = 1;
+            this.timeQuantum_NUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.timeQuantum_NUD.Location = new System.Drawing.Point(175, 98);
             this.timeQuantum_NUD.Name = "timeQuantum_NUD";
             this.timeQuantum_NUD.Size = new System.Drawing.Size(48, 20);
             this.timeQuantum_NUD.TabIndex = 17;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(29, 87);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(48, 13);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "constant";
             // 
             // Form1
             // 
@@ -869,7 +876,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox pe_thirdCoeff_TB;
         private System.Windows.Forms.TextBox pe_secondCoeff_TB;
         private System.Windows.Forms.TextBox pe_firstCoeff_TB;
         private System.Windows.Forms.Label label19;
@@ -893,6 +899,7 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label21;
     }
 }
 

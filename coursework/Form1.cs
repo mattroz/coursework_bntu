@@ -27,6 +27,10 @@ namespace coursework
 
             pe_fourthCoeff_TB.Text = "5";
 
+            timeStart_NUD.Value = 3;
+            timeFinish_NUD.Value = 12;
+            timeQuantum_NUD.Value = (decimal)0.3;
+
             machineTimeRB.Checked = true;
         }
 
@@ -105,7 +109,6 @@ namespace coursework
             PolinomialEquation pe = new PolinomialEquation();
             pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
             pe.bCoefficient = Convert.ToDouble(pe_secondCoeff_TB.Text);
-            pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
             pe.dCoefficient = Convert.ToDouble(pe_fourthCoeff_TB.Text);
 
             float point;
@@ -118,6 +121,7 @@ namespace coursework
             /*   Plotting    */
             for (float t = time_start; t <= time_finish; t += time_quantum )
             {
+                pe.cCoefficient = pe.dCoefficient / t;  //  change C coefficient value dynamically
                 point = pe.calculateCurrentValue(t);
                 timeFunctionPlot.Series["Series1"].Points.AddXY(t, point);
 
