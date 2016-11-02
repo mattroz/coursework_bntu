@@ -17,6 +17,23 @@ namespace coursework
             InitializeComponent();
         }
 
+        /*          VALIDATION          */
+        private bool isValid(KeyPressEventArgs _event)
+        {
+            bool result;
+            //if ()
+            //{
+            //    return false;
+            //}
+            //else
+            //{
+            //    return true;
+            //}   
+
+            return (result = (Char.IsDigit(_event.KeyChar) || Char.IsControl(_event.KeyChar) 
+                    || _event.KeyChar == ',' || _event.KeyChar == '-') ? false : true);
+        }
+
         /*         NON-LINEAR EQUATION UI IMPLEMENTATION         */
 
         private void nle_setVariablesButton_Click(object sender, EventArgs e)
@@ -31,38 +48,17 @@ namespace coursework
 
         private void leftBoundaryPoint_TB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-')
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            e.Handled = isValid(e);
         }
 
         private void rightBoundaryPoint_TB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-')
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            e.Handled = isValid(e);
         }
 
         private void epsilon_TB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-')
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            e.Handled = isValid(e);
         }
 
 
@@ -81,38 +77,17 @@ namespace coursework
 
         private void qe_firstCoeffTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-')
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            e.Handled = isValid(e);
         }
 
         private void qe_secondCoeffTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-')
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            e.Handled = isValid(e);
         }
 
         private void qe_thirdCoeffTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-')
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            e.Handled = isValid(e);
         }
         
         
