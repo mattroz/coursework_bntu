@@ -108,18 +108,23 @@ namespace coursework
             pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
             pe.dCoefficient = Convert.ToDouble(pe_fourthCoeff_TB.Text);
 
-            float point = pe.calculateCurrentValue(3);
-            //float time_start = 3.0, time_finish = 12.0, time_quantum = 0.3;
+            float point;
+            float time_start = (float)timeStart_NUD.Value,
+                  time_finish = (float)timeFinish_NUD.Value,
+                  time_quantum = (float)timeQuantum_NUD.Value;
 
-            pe_answerHolder.Text = point.ToString();
-            pe_logBox.Items.Add(point);
+            //pe_answerHolder.Text = point.ToString();
 
-            //for()
-            //{
+            /*   Plotting    */
+            for (float t = time_start; t <= time_finish; t += time_quantum )
+            {
+                point = pe.calculateCurrentValue(t);
+                timeFunctionPlot.Series["Series1"].Points.AddXY(t, point);
+
+                pe_logBox.Items.Add(point);
+            }
+
             
-            //}
-
-            //chart1.Series["Series1"].Points.AddXY(3);
 
         }
 

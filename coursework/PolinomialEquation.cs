@@ -37,7 +37,7 @@ namespace coursework
             get { return coeff_d; }
         }
 
-        public float calculateCurrentValue(int time)
+        public float calculateCurrentValue(float time)
         { 
             return (float)((coeff_a * (time*time*time)) + 
                            (coeff_b * (time*time)) + (coeff_c * time) + (coeff_d));

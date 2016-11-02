@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -89,13 +89,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.timeFunctionPlot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.timeStart_NUD = new System.Windows.Forms.NumericUpDown();
+            this.timeFinish_NUD = new System.Windows.Forms.NumericUpDown();
+            this.timeQuantum_NUD = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -114,13 +114,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeFunctionPlot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_NUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeFinish_NUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeQuantum_NUD)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -556,9 +556,9 @@
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.numericUpDown3);
-            this.panel9.Controls.Add(this.numericUpDown2);
-            this.panel9.Controls.Add(this.numericUpDown1);
+            this.panel9.Controls.Add(this.timeQuantum_NUD);
+            this.panel9.Controls.Add(this.timeFinish_NUD);
+            this.panel9.Controls.Add(this.timeStart_NUD);
             this.panel9.Controls.Add(this.pictureBox7);
             this.panel9.Controls.Add(this.pictureBox6);
             this.panel9.Controls.Add(this.pictureBox5);
@@ -700,7 +700,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.chart1);
+            this.groupBox4.Controls.Add(this.timeFunctionPlot);
             this.groupBox4.Location = new System.Drawing.Point(12, 391);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(887, 256);
@@ -708,24 +708,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Plot";
             // 
-            // chart1
+            // timeFunctionPlot
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
-            this.chart1.Location = new System.Drawing.Point(9, 15);
-            this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(863, 235);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            chartArea1.Name = "ChartArea1";
+            this.timeFunctionPlot.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.timeFunctionPlot.Legends.Add(legend1);
+            this.timeFunctionPlot.Location = new System.Drawing.Point(9, 15);
+            this.timeFunctionPlot.Name = "timeFunctionPlot";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.timeFunctionPlot.Series.Add(series1);
+            this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
+            this.timeFunctionPlot.TabIndex = 0;
+            this.timeFunctionPlot.Text = "chart1";
+            this.timeFunctionPlot.Click += new System.EventHandler(this.chart1_Click);
             // 
             // pictureBox5
             // 
@@ -754,26 +754,26 @@
             this.pictureBox7.TabIndex = 14;
             this.pictureBox7.TabStop = false;
             // 
-            // numericUpDown1
+            // timeStart_NUD
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(175, 32);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown1.TabIndex = 15;
+            this.timeStart_NUD.Location = new System.Drawing.Point(175, 32);
+            this.timeStart_NUD.Name = "timeStart_NUD";
+            this.timeStart_NUD.Size = new System.Drawing.Size(48, 20);
+            this.timeStart_NUD.TabIndex = 15;
             // 
-            // numericUpDown2
+            // timeFinish_NUD
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(175, 65);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown2.TabIndex = 16;
+            this.timeFinish_NUD.Location = new System.Drawing.Point(175, 65);
+            this.timeFinish_NUD.Name = "timeFinish_NUD";
+            this.timeFinish_NUD.Size = new System.Drawing.Size(48, 20);
+            this.timeFinish_NUD.TabIndex = 16;
             // 
-            // numericUpDown3
+            // timeQuantum_NUD
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(175, 98);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown3.TabIndex = 17;
+            this.timeQuantum_NUD.Location = new System.Drawing.Point(175, 98);
+            this.timeQuantum_NUD.Name = "timeQuantum_NUD";
+            this.timeQuantum_NUD.Size = new System.Drawing.Size(48, 20);
+            this.timeQuantum_NUD.TabIndex = 17;
             // 
             // Form1
             // 
@@ -815,13 +815,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeFunctionPlot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_NUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeFinish_NUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeQuantum_NUD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -886,10 +886,10 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart timeFunctionPlot;
+        private System.Windows.Forms.NumericUpDown timeQuantum_NUD;
+        private System.Windows.Forms.NumericUpDown timeFinish_NUD;
+        private System.Windows.Forms.NumericUpDown timeStart_NUD;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
