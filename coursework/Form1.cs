@@ -106,6 +106,10 @@ namespace coursework
 
         private void pe_calculateVariableButton_Click(object sender, EventArgs e)
         {
+            /*  clear chart and list box  */
+            timeFunctionPlot.Series["Series1"].Points.Clear();
+            pe_logBox.Items.Clear();
+            
             PolinomialEquation pe = new PolinomialEquation();
             pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
             pe.bCoefficient = Convert.ToDouble(pe_secondCoeff_TB.Text);
