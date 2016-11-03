@@ -108,7 +108,8 @@ namespace coursework
         {
             /*  clear chart and list box  */
             timeFunctionPlot.Series["Series1"].Points.Clear();
-            pe_logBox.Items.Clear();
+            pe_logRichBox.Clear();
+            //pe_logRichBox.AppendText("TIME           |        VALUE");
             
             PolinomialEquation pe = new PolinomialEquation();
             pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
@@ -129,7 +130,8 @@ namespace coursework
                 point = pe.calculateCurrentValue(t);
                 timeFunctionPlot.Series["Series1"].Points.AddXY(t, point);
 
-                pe_logBox.Items.Add(point);
+                pe_logRichBox.AppendText(String.Format("{0:0.0}", t).PadLeft(8, ' ') + 
+                                         String.Format("{0:0.0}", point).PadLeft(17, ' ') + Environment.NewLine);
             }
 
             

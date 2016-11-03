@@ -17,6 +17,8 @@ namespace coursework
 
         public void setCoefficients(double a, double b, double c)
         {
+            //  catch exception at a coefficient
+
             coeff_a = a;
             coeff_b = b;
             coeff_c = c;

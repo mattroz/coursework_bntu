@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.pe_logBox = new System.Windows.Forms.ListBox();
+            this.pe_logRichBox = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.pe_answerHolder = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -75,6 +75,13 @@
             this.machineTimeRB = new System.Windows.Forms.RadioButton();
             this.pe_startPlottingButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.timeQuantum_NUD = new System.Windows.Forms.NumericUpDown();
+            this.timeFinish_NUD = new System.Windows.Forms.NumericUpDown();
+            this.timeStart_NUD = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pe_fourthCoeff_TB = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -89,13 +96,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.timeFunctionPlot = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.timeStart_NUD = new System.Windows.Forms.NumericUpDown();
-            this.timeFinish_NUD = new System.Windows.Forms.NumericUpDown();
-            this.timeQuantum_NUD = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,17 +111,17 @@
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timeQuantum_NUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeFinish_NUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_NUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeFunctionPlot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeStart_NUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeFinish_NUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeQuantum_NUD)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -466,29 +467,30 @@
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.pe_logBox);
+            this.panel10.Controls.Add(this.label22);
+            this.panel10.Controls.Add(this.pe_logRichBox);
             this.panel10.Controls.Add(this.label20);
             this.panel10.Location = new System.Drawing.Point(249, 19);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(152, 347);
+            this.panel10.Size = new System.Drawing.Size(145, 347);
             this.panel10.TabIndex = 12;
             // 
-            // pe_logBox
+            // pe_logRichBox
             // 
-            this.pe_logBox.FormattingEnabled = true;
-            this.pe_logBox.Location = new System.Drawing.Point(6, 24);
-            this.pe_logBox.Name = "pe_logBox";
-            this.pe_logBox.Size = new System.Drawing.Size(137, 316);
-            this.pe_logBox.TabIndex = 5;
+            this.pe_logRichBox.Location = new System.Drawing.Point(6, 24);
+            this.pe_logRichBox.Name = "pe_logRichBox";
+            this.pe_logRichBox.Size = new System.Drawing.Size(132, 309);
+            this.pe_logRichBox.TabIndex = 7;
+            this.pe_logRichBox.Text = "";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 8);
+            this.label20.Location = new System.Drawing.Point(17, 8);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(29, 13);
+            this.label20.Size = new System.Drawing.Size(33, 13);
             this.label20.TabIndex = 3;
-            this.label20.Text = "LOG";
+            this.label20.Text = "TIME";
             // 
             // pe_answerHolder
             // 
@@ -576,6 +578,69 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(239, 142);
             this.panel9.TabIndex = 10;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(29, 87);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(48, 13);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "constant";
+            // 
+            // timeQuantum_NUD
+            // 
+            this.timeQuantum_NUD.DecimalPlaces = 1;
+            this.timeQuantum_NUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.timeQuantum_NUD.Location = new System.Drawing.Point(175, 98);
+            this.timeQuantum_NUD.Name = "timeQuantum_NUD";
+            this.timeQuantum_NUD.Size = new System.Drawing.Size(48, 20);
+            this.timeQuantum_NUD.TabIndex = 17;
+            // 
+            // timeFinish_NUD
+            // 
+            this.timeFinish_NUD.Location = new System.Drawing.Point(175, 65);
+            this.timeFinish_NUD.Name = "timeFinish_NUD";
+            this.timeFinish_NUD.Size = new System.Drawing.Size(48, 20);
+            this.timeFinish_NUD.TabIndex = 16;
+            // 
+            // timeStart_NUD
+            // 
+            this.timeStart_NUD.Location = new System.Drawing.Point(175, 32);
+            this.timeStart_NUD.Name = "timeStart_NUD";
+            this.timeStart_NUD.Size = new System.Drawing.Size(48, 20);
+            this.timeStart_NUD.TabIndex = 15;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(145, 91);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(24, 27);
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(145, 61);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(145, 31);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
             // 
             // label14
             // 
@@ -702,91 +767,37 @@
             // 
             // timeFunctionPlot
             // 
-            chartArea1.Name = "ChartArea1";
-            this.timeFunctionPlot.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.timeFunctionPlot.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.timeFunctionPlot.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.timeFunctionPlot.Legends.Add(legend2);
             this.timeFunctionPlot.Location = new System.Drawing.Point(9, 15);
             this.timeFunctionPlot.Name = "timeFunctionPlot";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.timeFunctionPlot.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.timeFunctionPlot.Series.Add(series2);
             this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
             this.timeFunctionPlot.TabIndex = 0;
             this.timeFunctionPlot.Text = "chart1";
             this.timeFunctionPlot.Click += new System.EventHandler(this.chart1_Click);
             // 
-            // pictureBox5
+            // label22
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(145, 31);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(145, 61);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox6.TabIndex = 13;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(145, 91);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(24, 27);
-            this.pictureBox7.TabIndex = 14;
-            this.pictureBox7.TabStop = false;
-            // 
-            // timeStart_NUD
-            // 
-            this.timeStart_NUD.Location = new System.Drawing.Point(175, 32);
-            this.timeStart_NUD.Name = "timeStart_NUD";
-            this.timeStart_NUD.Size = new System.Drawing.Size(48, 20);
-            this.timeStart_NUD.TabIndex = 15;
-            // 
-            // timeFinish_NUD
-            // 
-            this.timeFinish_NUD.Location = new System.Drawing.Point(175, 65);
-            this.timeFinish_NUD.Name = "timeFinish_NUD";
-            this.timeFinish_NUD.Size = new System.Drawing.Size(48, 20);
-            this.timeFinish_NUD.TabIndex = 16;
-            // 
-            // timeQuantum_NUD
-            // 
-            this.timeQuantum_NUD.DecimalPlaces = 1;
-            this.timeQuantum_NUD.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.timeQuantum_NUD.Location = new System.Drawing.Point(175, 98);
-            this.timeQuantum_NUD.Name = "timeQuantum_NUD";
-            this.timeQuantum_NUD.Size = new System.Drawing.Size(48, 20);
-            this.timeQuantum_NUD.TabIndex = 17;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(29, 87);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(48, 13);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "constant";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(72, 8);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(42, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "VALUE";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 649);
+            this.ClientSize = new System.Drawing.Size(907, 649);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -817,18 +828,18 @@
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timeQuantum_NUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeFinish_NUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeStart_NUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.timeFunctionPlot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeStart_NUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeFinish_NUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeQuantum_NUD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -888,7 +899,6 @@
         private System.Windows.Forms.RadioButton realTimeRB;
         private System.Windows.Forms.RadioButton machineTimeRB;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListBox pe_logBox;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -900,6 +910,8 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.RichTextBox pe_logRichBox;
+        private System.Windows.Forms.Label label22;
     }
 }
 
