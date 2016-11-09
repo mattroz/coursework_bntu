@@ -16,7 +16,10 @@ namespace coursework
         {
             InitializeComponent();
 
+            /************************/
             /*   DEFAULT SETTINGS   */
+            /************************/
+            #region
             leftBoundaryPoint_TB.Text = "0";
             rightBoundaryPoint_TB.Text = "0,85";
             epsilon_TB.Text = "0,0001";
@@ -35,23 +38,26 @@ namespace coursework
 
             qe_calculateVariableButton.Enabled = false;
             pe_startPlottingButton.Enabled = false;
+             #endregion
         }
+           
 
         /********************************/
         /*          VALIDATION          */
         /********************************/
-
+        #region
         private bool isValid(KeyPressEventArgs _event)
         {
             bool result = (Char.IsDigit(_event.KeyChar) || Char.IsControl(_event.KeyChar) 
                             || _event.KeyChar == ',' || _event.KeyChar == '-') ? false : true;
             return result;
         }
+        #endregion
 
         /*********************************************************/
         /*         NON-LINEAR EQUATION UI IMPLEMENTATION         */
         /*********************************************************/
-
+        #region
         private void nle_setVariablesButton_Click(object sender, EventArgs e)
         {
             NonLinearEquation nle = new NonLinearEquation();
@@ -79,11 +85,13 @@ namespace coursework
         {
             e.Handled = isValid(e);
         }
+        #endregion
+
 
         /*****************************************************/
         /*       QUADRATICS EQUATION UI IMPLEMENTATION       */
         /*****************************************************/
-
+        #region
         private void qe_setVariableButton_Click(object sender, EventArgs e)
         {
             QuadraticEquation qe = new QuadraticEquation();
@@ -113,10 +121,13 @@ namespace coursework
             e.Handled = isValid(e);
         }
 
+        #endregion
+
+
         /*****************************************************/
         /*       POLYNOMIAL EQUATION UI IMPLEMENTATION       */
         /*****************************************************/
-
+        #region
         private void pe_calculateVariableButton_Click(object sender, EventArgs e)
         {
             /*  clear chart and list box  */
@@ -126,17 +137,17 @@ namespace coursework
             PolinomialEquation pe = new PolinomialEquation();
             pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
             pe.bCoefficient = Convert.ToDouble(pe_secondCoeff_TB.Text);
+            pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
             pe.dCoefficient = Convert.ToDouble(pe_fourthCoeff_TB.Text);
+           
 
             float point;
             float time_start = (float)timeStart_NUD.Value,
                   time_finish = (float)timeFinish_NUD.Value,
                   time_quantum = (float)timeQuantum_NUD.Value;
 
-            //pe_answerHolder.Text = point.ToString();
 
             /*   Plotting    */
-
             if (realTimeRB.Checked)
             {
                 //TO DO: PLOTTING FUNCTION, REAL REALTIME PLOTTING
@@ -145,7 +156,6 @@ namespace coursework
             {
                 for (float t = time_start; t <= time_finish; t += time_quantum)
                 {
-                    pe.cCoefficient = pe.dCoefficient / t;  //  change C coefficient value dynamically
                     point = pe.calculateCurrentValue(t);
                     timeFunctionPlot.Series["TimeFunction"].Points.AddXY(t, point);
 
@@ -155,13 +165,6 @@ namespace coursework
             }
             
 
-        }
-
-
-        private void showConditionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutBox1 aboutbox = new AboutBox1();
-            aboutbox.Show();
         }
 
         private void pe_firstCoeff_TB_KeyPress(object sender, KeyPressEventArgs e)
@@ -183,6 +186,18 @@ namespace coursework
         {
             e.Handled = isValid(e);
         }
-        
+        #endregion
+
+
+        /******************************/
+        /*       SHOW ABOUT BOX       */
+        /******************************/
+        #region
+        private void showConditionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutbox = new AboutBox1();
+            aboutbox.Show();
+        }
+        #endregion
     }
 }
