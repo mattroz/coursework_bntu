@@ -153,14 +153,15 @@ namespace coursework
             if (realTimeRB.Checked)
             {
                 //TO DO: PLOTTING FUNCTION, REAL REALTIME PLOTTING
-                System.Timers.Timer plotTimer = new System.Timers.Timer();
-                plotTimer.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
-                plotTimer.Interval = time_quantum * 1000;
-                plotTimer.Enabled = true;
-                
+                timerRealTimeData.Interval = (int)(time_quantum * 1000);
+                timerRealTimeData.Enabled = true;
+                timerRealTimeData.Tick += timerRealTimeData_Tick;
+                 
             }
             else
             {
+                this.timerRealTimeData.Enabled = false;
+
                 for (float t = time_start; t < (time_finish + time_quantum); t += time_quantum) //some float tricks
                 {
                     point = pe.calculateCurrentValue(t);
@@ -174,15 +175,6 @@ namespace coursework
 
         }
 
-        private static void OnTimedEvent(object source, System.Timers.ElapsedEventArgs e)
-        {
-            //point = pe.calculateCurrentValue(t);
-            //timeFunctionPlot.Series["TimeFunction"].Points.AddXY(t, point);
-
-            //pe_logRichBox.AppendText(String.Format("{0:0.0}", t).PadLeft(8, ' ') +
-            //                         String.Format("{0:0.0}", point).PadLeft(17, ' ') + Environment.NewLine); 
-            
-        }
 
         private void pe_firstCoeff_TB_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -216,5 +208,40 @@ namespace coursework
             aboutbox.Show();
         }
         #endregion
+
+       /****************************************/
+       /*      TIMER TICK IMPLEMENTATION       */
+       /****************************************/
+        #region
+        Timer timerRealTimeData = new Timer();
+        public float elapsedTime = 0;
+        public float totalTime = 9000;
+
+        private void timerRealTimeData_Tick(object sender, System.EventArgs e)
+        {
+
+            if(elapsedTime > totalTime)
+            {
+                return;
+            }
+
+            float point;
+
+            point = pe.calculateCurrentValue((elapsedTime / 1000));
+            timeFunctionPlot.Series["TimeFunction"].Points.AddXY((elapsedTime/1000), point);
+
+            pe_logRichBox.AppendText(String.Format("{0:0.0}", (elapsedTime / 1000)).PadLeft(8, ' ') +
+                                        String.Format("{0:0.0}", point).PadLeft(17, ' ') + Environment.NewLine);
+
+
+
+            // Redraw chart
+            //}
+            elapsedTime += timerRealTimeData.Interval;
+            timeFunctionPlot.Invalidate();
+        }
+        #endregion
     }
 }
+
+
