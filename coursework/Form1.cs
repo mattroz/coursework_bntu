@@ -37,7 +37,9 @@ namespace coursework
             pe_startPlottingButton.Enabled = false;
         }
 
+        /********************************/
         /*          VALIDATION          */
+        /********************************/
 
         private bool isValid(KeyPressEventArgs _event)
         {
@@ -46,8 +48,9 @@ namespace coursework
             return result;
         }
 
-
+        /*********************************************************/
         /*         NON-LINEAR EQUATION UI IMPLEMENTATION         */
+        /*********************************************************/
 
         private void nle_setVariablesButton_Click(object sender, EventArgs e)
         {
@@ -77,8 +80,9 @@ namespace coursework
             e.Handled = isValid(e);
         }
 
-
+        /*****************************************************/
         /*       QUADRATICS EQUATION UI IMPLEMENTATION       */
+        /*****************************************************/
 
         private void qe_setVariableButton_Click(object sender, EventArgs e)
         {
@@ -109,12 +113,14 @@ namespace coursework
             e.Handled = isValid(e);
         }
 
+        /*****************************************************/
         /*       POLYNOMIAL EQUATION UI IMPLEMENTATION       */
+        /*****************************************************/
 
         private void pe_calculateVariableButton_Click(object sender, EventArgs e)
         {
             /*  clear chart and list box  */
-            timeFunctionPlot.Series["Series1"].Points.Clear();
+            timeFunctionPlot.Series["TimeFunction"].Points.Clear();
             pe_logRichBox.Clear();
             
             PolinomialEquation pe = new PolinomialEquation();
@@ -141,7 +147,7 @@ namespace coursework
                 {
                     pe.cCoefficient = pe.dCoefficient / t;  //  change C coefficient value dynamically
                     point = pe.calculateCurrentValue(t);
-                    timeFunctionPlot.Series["Series1"].Points.AddXY(t, point);
+                    timeFunctionPlot.Series["TimeFunction"].Points.AddXY(t, point);
 
                     pe_logRichBox.AppendText(String.Format("{0:0.0}", t).PadLeft(8, ' ') +
                                              String.Format("{0:0.0}", point).PadLeft(17, ' ') + Environment.NewLine);
@@ -151,20 +157,31 @@ namespace coursework
 
         }
 
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void showConditionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox1 ab = new AboutBox1();
-            ab.Show();
+            AboutBox1 aboutbox = new AboutBox1();
+            aboutbox.Show();
+        }
+
+        private void pe_firstCoeff_TB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = isValid(e);
+        }
+
+        private void pe_secondCoeff_TB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = isValid(e);
+        }
+
+        private void pe_fourthCoeff_TB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = isValid(e);
+        }
+
+        private void pe_thirdCoeff_TB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = isValid(e);
         }
         
     }

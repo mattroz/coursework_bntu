@@ -76,7 +76,6 @@
             this.machineTimeRB = new System.Windows.Forms.RadioButton();
             this.pe_startPlottingButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
             this.timeQuantum_NUD = new System.Windows.Forms.NumericUpDown();
             this.timeFinish_NUD = new System.Windows.Forms.NumericUpDown();
             this.timeStart_NUD = new System.Windows.Forms.NumericUpDown();
@@ -99,6 +98,7 @@
             this.timeFunctionPlot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.showConditionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pe_thirdCoeff_TB = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -570,7 +570,7 @@
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.label21);
+            this.panel9.Controls.Add(this.pe_thirdCoeff_TB);
             this.panel9.Controls.Add(this.timeQuantum_NUD);
             this.panel9.Controls.Add(this.timeFinish_NUD);
             this.panel9.Controls.Add(this.timeStart_NUD);
@@ -590,15 +590,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(239, 142);
             this.panel9.TabIndex = 10;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(29, 87);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(48, 13);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "constant";
             // 
             // timeQuantum_NUD
             // 
@@ -671,6 +662,7 @@
             this.pe_fourthCoeff_TB.ShortcutsEnabled = false;
             this.pe_fourthCoeff_TB.Size = new System.Drawing.Size(64, 20);
             this.pe_fourthCoeff_TB.TabIndex = 10;
+            this.pe_fourthCoeff_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pe_fourthCoeff_TB_KeyPress);
             // 
             // label16
             // 
@@ -709,6 +701,7 @@
             this.pe_secondCoeff_TB.ShortcutsEnabled = false;
             this.pe_secondCoeff_TB.Size = new System.Drawing.Size(64, 20);
             this.pe_secondCoeff_TB.TabIndex = 3;
+            this.pe_secondCoeff_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pe_secondCoeff_TB_KeyPress);
             // 
             // pe_firstCoeff_TB
             // 
@@ -717,6 +710,7 @@
             this.pe_firstCoeff_TB.ShortcutsEnabled = false;
             this.pe_firstCoeff_TB.Size = new System.Drawing.Size(64, 20);
             this.pe_firstCoeff_TB.TabIndex = 2;
+            this.pe_firstCoeff_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pe_firstCoeff_TB_KeyPress);
             // 
             // label19
             // 
@@ -742,9 +736,9 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(74, 65);
+            this.pictureBox4.Location = new System.Drawing.Point(75, 65);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(72, 41);
+            this.pictureBox4.Size = new System.Drawing.Size(76, 41);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
@@ -779,22 +773,24 @@
             // 
             // timeFunctionPlot
             // 
+            this.timeFunctionPlot.BackColor = System.Drawing.Color.OldLace;
             chartArea1.Name = "ChartArea1";
             this.timeFunctionPlot.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.timeFunctionPlot.Legends.Add(legend1);
             this.timeFunctionPlot.Location = new System.Drawing.Point(9, 15);
             this.timeFunctionPlot.Name = "timeFunctionPlot";
+            this.timeFunctionPlot.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.LabelForeColor = System.Drawing.Color.DarkRed;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "TimeFunction";
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.timeFunctionPlot.Series.Add(series1);
             this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
             this.timeFunctionPlot.TabIndex = 0;
             this.timeFunctionPlot.Text = "chart1";
-            this.timeFunctionPlot.Click += new System.EventHandler(this.chart1_Click);
             // 
             // menuStrip1
             // 
@@ -809,9 +805,18 @@
             // showConditionToolStripMenuItem
             // 
             this.showConditionToolStripMenuItem.Name = "showConditionToolStripMenuItem";
-            this.showConditionToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.showConditionToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.showConditionToolStripMenuItem.Text = "Показать условие ";
             this.showConditionToolStripMenuItem.Click += new System.EventHandler(this.showConditionToolStripMenuItem_Click);
+            // 
+            // pe_thirdCoeff_TB
+            // 
+            this.pe_thirdCoeff_TB.Location = new System.Drawing.Point(32, 84);
+            this.pe_thirdCoeff_TB.Name = "pe_thirdCoeff_TB";
+            this.pe_thirdCoeff_TB.ShortcutsEnabled = false;
+            this.pe_thirdCoeff_TB.Size = new System.Drawing.Size(64, 20);
+            this.pe_thirdCoeff_TB.TabIndex = 18;
+            this.pe_thirdCoeff_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pe_thirdCoeff_TB_KeyPress);
             // 
             // Form1
             // 
@@ -829,7 +834,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "CourseWork";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -938,11 +942,11 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.RichTextBox pe_logRichBox;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showConditionToolStripMenuItem;
+        private System.Windows.Forms.TextBox pe_thirdCoeff_TB;
     }
 }
 
