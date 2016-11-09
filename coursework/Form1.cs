@@ -12,7 +12,20 @@ namespace coursework
 {
     public partial class Form1 : Form
     {
-        PolinomialEquation pe = new PolinomialEquation();   // global because of need of Timer's correct work
+        public struct TimeFunctionChart_s
+        {
+            public float
+                start_time,
+                finish_time,
+                time_quantum,
+                elapsed_time = 0,
+                total_time;
+        }
+
+        // globals because of need of Timer's correct work
+        PolinomialEquation pe = new PolinomialEquation();   
+        TimeFunctionChart_s chartTimeProperties = new TimeFunctionChart_s();
+        
 
         public Form1()
         {
@@ -43,7 +56,7 @@ namespace coursework
             pe_startPlottingButton.Enabled = false;
              #endregion
         }
-           
+
 
         /********************************/
         /*          VALIDATION          */
@@ -142,18 +155,19 @@ namespace coursework
             pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
             pe.dCoefficient = Convert.ToDouble(pe_fourthCoeff_TB.Text);
            
-
+            // get/calculate all variables requiring timer
             float point;
-            float time_start = (float)timeStart_NUD.Value,
-                  time_finish = (float)timeFinish_NUD.Value,
-                  time_quantum = (float)timeQuantum_NUD.Value;
+            chartTimeProperties.start_time = (float)timeStart_NUD.Value;
+            chartTimeProperties.finish_time = (float)timeFinish_NUD.Value;
+            chartTimeProperties.time_quantum = (float)timeQuantum_NUD.Value;
+            chartTimeProperties.total_time = chartTimeProperties.finish_time - chartTimeProperties.start_time;
 
 
             /*   Plotting    */
             if (realTimeRB.Checked)
             {
                 //TO DO: PLOTTING FUNCTION, REAL REALTIME PLOTTING
-                timerRealTimeData.Interval = (int)(time_quantum * 1000);
+                timerRealTimeData.Interval = (int)(chartTimeProperties.time_quantum * 1000);
                 timerRealTimeData.Enabled = true;
                 timerRealTimeData.Tick += timerRealTimeData_Tick;
                  
@@ -162,7 +176,9 @@ namespace coursework
             {
                 this.timerRealTimeData.Enabled = false;
 
-                for (float t = time_start; t < (time_finish + time_quantum); t += time_quantum) //some float tricks
+                for (float t = chartTimeProperties.start_time;
+                           t < (chartTimeProperties.finish_time + chartTimeProperties.time_quantum);
+                           t += chartTimeProperties.time_quantum) //some float tricks
                 {
                     point = pe.calculateCurrentValue(t);
                     timeFunctionPlot.Series["TimeFunction"].Points.AddXY(t, point);
