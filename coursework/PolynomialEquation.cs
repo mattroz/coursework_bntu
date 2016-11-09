@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace coursework
 {
-    class PolinomialEquation
+    class PolynomialEquation
     {
-        public PolinomialEquation(){ }
+        public PolynomialEquation(){ }
 
         /*   CLASS FIELDS   */
         private double coeff_a, coeff_b, coeff_c, coeff_d;
