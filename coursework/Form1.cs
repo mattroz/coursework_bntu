@@ -12,6 +12,8 @@ namespace coursework
 {
     public partial class Form1 : Form
     {
+        PolinomialEquation pe = new PolinomialEquation();   // global because of need of Timer's correct work
+
         public Form1()
         {
             InitializeComponent();
@@ -135,7 +137,6 @@ namespace coursework
             timeFunctionPlot.Series["TimeFunction"].Points.Clear();
             pe_logRichBox.Clear();
             
-            PolinomialEquation pe = new PolinomialEquation();
             pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
             pe.bCoefficient = Convert.ToDouble(pe_secondCoeff_TB.Text);
             pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
@@ -160,7 +161,7 @@ namespace coursework
             }
             else
             {
-                for (float t = time_start; t <= time_finish; t += time_quantum)
+                for (float t = time_start; t < (time_finish + time_quantum); t += time_quantum) //some float tricks
                 {
                     point = pe.calculateCurrentValue(t);
                     timeFunctionPlot.Series["TimeFunction"].Points.AddXY(t, point);
