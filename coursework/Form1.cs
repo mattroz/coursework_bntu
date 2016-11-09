@@ -28,6 +28,7 @@ namespace coursework
             qe_secondCoeffTB.Text = "3";
             qe_thirdCoeffTB.Text = "-3";
 
+            pe_thirdCoeff_TB.Text = "5";
             pe_fourthCoeff_TB.Text = "5";
 
             timeStart_NUD.Value = 3;
@@ -65,7 +66,7 @@ namespace coursework
             nle.rightBoundaryPoint = Convert.ToDouble(rightBoundaryPoint_TB.Text);
             nle.Epsilon = Convert.ToDouble(epsilon_TB.Text);
 
-            nle_answerHolder.Text = nle.solveByIterationsMethod().ToString();
+            nle_answerHolder.Text = nle.solveByIterationsMethod().ToString("0.0000");
             pe_firstCoeff_TB.Text = nle_answerHolder.Text;
 
             qe_calculateVariableButton.Enabled = true;
@@ -99,7 +100,7 @@ namespace coursework
                                 Convert.ToDouble(qe_secondCoeffTB.Text),
                                 Convert.ToDouble(qe_thirdCoeffTB.Text));
 
-            qe_answerHolder.Text = qe.solveByDiscriminant().ToString();
+            qe_answerHolder.Text = qe.solveByDiscriminant().ToString("0.0000");
             pe_secondCoeff_TB.Text = qe_answerHolder.Text;
 
             pe_startPlottingButton.Enabled = true;
@@ -151,6 +152,11 @@ namespace coursework
             if (realTimeRB.Checked)
             {
                 //TO DO: PLOTTING FUNCTION, REAL REALTIME PLOTTING
+                System.Timers.Timer plotTimer = new System.Timers.Timer();
+                plotTimer.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
+                plotTimer.Interval = time_quantum * 1000;
+                plotTimer.Enabled = true;
+                
             }
             else
             {
@@ -165,6 +171,16 @@ namespace coursework
             }
             
 
+        }
+
+        private static void OnTimedEvent(object source, System.Timers.ElapsedEventArgs e)
+        {
+            //point = pe.calculateCurrentValue(t);
+            //timeFunctionPlot.Series["TimeFunction"].Points.AddXY(t, point);
+
+            //pe_logRichBox.AppendText(String.Format("{0:0.0}", t).PadLeft(8, ' ') +
+            //                         String.Format("{0:0.0}", point).PadLeft(17, ' ') + Environment.NewLine); 
+            
         }
 
         private void pe_firstCoeff_TB_KeyPress(object sender, KeyPressEventArgs e)
