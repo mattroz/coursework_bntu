@@ -169,8 +169,8 @@ namespace coursework
             pe.bCoefficient = Convert.ToDouble(pe_secondCoeff_TB.Text);
             pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
             pe.dCoefficient = Convert.ToDouble(pe_fourthCoeff_TB.Text);
-           
-            // get/calculate all variables requiring timer      TODO:  maybe initializeChartVariables() method 
+
+            /*   get/calculate all variables requiring timer    */
             float point;
             chartTimeProperties.start_time = (float)timeStart_NUD.Value;
             chartTimeProperties.finish_time = (float)timeFinish_NUD.Value;
@@ -181,11 +181,9 @@ namespace coursework
             /*   Plotting    */
             if (realTimeRB.Checked)
             {
-                //TO DO: PLOTTING FUNCTION, REAL REALTIME PLOTTING
                 timerRealTimeData.Interval = (int)(chartTimeProperties.time_quantum);
                 timerRealTimeData.Enabled = true;
-                timerRealTimeData.Tick += timerRealTimeData_Tick;
-                 
+                timerRealTimeData.Tick += timerRealTimeData_Tick;  
             }
             else
             {
@@ -193,7 +191,7 @@ namespace coursework
 
                 for (float t = chartTimeProperties.start_time;
                            t < (chartTimeProperties.finish_time + chartTimeProperties.time_quantum/1000);
-                           t += (chartTimeProperties.time_quantum/1000)) //some float tricks
+                           t += (chartTimeProperties.time_quantum/1000)) 
                 {
                     point = pe.calculateCurrentValue(t);
                     addValuesToChart(point, t);
