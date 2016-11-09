@@ -32,6 +32,9 @@ namespace coursework
             timeQuantum_NUD.Value = (decimal)0.3;
 
             machineTimeRB.Checked = true;
+
+            qe_calculateVariableButton.Enabled = false;
+            pe_startPlottingButton.Enabled = false;
         }
 
         /*          VALIDATION          */
@@ -55,6 +58,8 @@ namespace coursework
 
             nle_answerHolder.Text = nle.solveByIterationsMethod().ToString();
             pe_firstCoeff_TB.Text = nle_answerHolder.Text;
+
+            qe_calculateVariableButton.Enabled = true;
         }
 
         private void leftBoundaryPoint_TB_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,6 +90,8 @@ namespace coursework
             qe_answerHolder.Text = qe.solveByDiscriminant().ToString();
             pe_secondCoeff_TB.Text = qe_answerHolder.Text;
 
+            pe_startPlottingButton.Enabled = true;
+
         }
 
         private void qe_firstCoeffTB_KeyPress(object sender, KeyPressEventArgs e)
@@ -109,7 +116,6 @@ namespace coursework
             /*  clear chart and list box  */
             timeFunctionPlot.Series["Series1"].Points.Clear();
             pe_logRichBox.Clear();
-            //pe_logRichBox.AppendText("TIME           |        VALUE");
             
             PolinomialEquation pe = new PolinomialEquation();
             pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
@@ -124,16 +130,23 @@ namespace coursework
             //pe_answerHolder.Text = point.ToString();
 
             /*   Plotting    */
-            for (float t = time_start; t <= time_finish; t += time_quantum )
+
+            if (realTimeRB.Checked)
             {
-                pe.cCoefficient = pe.dCoefficient / t;  //  change C coefficient value dynamically
-                point = pe.calculateCurrentValue(t);
-                timeFunctionPlot.Series["Series1"].Points.AddXY(t, point);
-
-                pe_logRichBox.AppendText(String.Format("{0:0.0}", t).PadLeft(8, ' ') + 
-                                         String.Format("{0:0.0}", point).PadLeft(17, ' ') + Environment.NewLine);
+                //TO DO: PLOTTING FUNCTION, REAL REALTIME PLOTTING
             }
+            else
+            {
+                for (float t = time_start; t <= time_finish; t += time_quantum)
+                {
+                    pe.cCoefficient = pe.dCoefficient / t;  //  change C coefficient value dynamically
+                    point = pe.calculateCurrentValue(t);
+                    timeFunctionPlot.Series["Series1"].Points.AddXY(t, point);
 
+                    pe_logRichBox.AppendText(String.Format("{0:0.0}", t).PadLeft(8, ' ') +
+                                             String.Format("{0:0.0}", point).PadLeft(17, ' ') + Environment.NewLine);
+                }
+            }
             
 
         }
@@ -141,6 +154,17 @@ namespace coursework
         private void chart1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showConditionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 ab = new AboutBox1();
+            ab.Show();
         }
         
     }

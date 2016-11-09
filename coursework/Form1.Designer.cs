@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
             this.pe_logRichBox = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.pe_answerHolder = new System.Windows.Forms.Label();
@@ -96,7 +97,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.timeFunctionPlot = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label22 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.showConditionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -122,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeFunctionPlot)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -129,7 +132,7 @@
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(215, 373);
             this.groupBox1.TabIndex = 2;
@@ -292,7 +295,7 @@
             this.groupBox2.Controls.Add(this.panel6);
             this.groupBox2.Controls.Add(this.panel5);
             this.groupBox2.Controls.Add(this.panel4);
-            this.groupBox2.Location = new System.Drawing.Point(233, 12);
+            this.groupBox2.Location = new System.Drawing.Point(233, 29);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(251, 373);
             this.groupBox2.TabIndex = 3;
@@ -457,7 +460,7 @@
             this.groupBox3.Controls.Add(this.panel8);
             this.groupBox3.Controls.Add(this.panel9);
             this.groupBox3.Controls.Add(this.panel7);
-            this.groupBox3.Location = new System.Drawing.Point(490, 12);
+            this.groupBox3.Location = new System.Drawing.Point(490, 29);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(409, 373);
             this.groupBox3.TabIndex = 4;
@@ -474,6 +477,15 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(145, 347);
             this.panel10.TabIndex = 12;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(72, 8);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(42, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "VALUE";
             // 
             // pe_logRichBox
             // 
@@ -758,7 +770,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.timeFunctionPlot);
-            this.groupBox4.Location = new System.Drawing.Point(12, 391);
+            this.groupBox4.Location = new System.Drawing.Point(12, 408);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(887, 256);
             this.groupBox4.TabIndex = 5;
@@ -767,43 +779,57 @@
             // 
             // timeFunctionPlot
             // 
-            chartArea2.Name = "ChartArea1";
-            this.timeFunctionPlot.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.timeFunctionPlot.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.timeFunctionPlot.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.timeFunctionPlot.Legends.Add(legend1);
             this.timeFunctionPlot.Location = new System.Drawing.Point(9, 15);
             this.timeFunctionPlot.Name = "timeFunctionPlot";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.timeFunctionPlot.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.timeFunctionPlot.Series.Add(series1);
             this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
             this.timeFunctionPlot.TabIndex = 0;
             this.timeFunctionPlot.Text = "chart1";
             this.timeFunctionPlot.Click += new System.EventHandler(this.chart1_Click);
             // 
-            // label22
+            // menuStrip1
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(72, 8);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(42, 13);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "VALUE";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showConditionToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(907, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // showConditionToolStripMenuItem
+            // 
+            this.showConditionToolStripMenuItem.Name = "showConditionToolStripMenuItem";
+            this.showConditionToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.showConditionToolStripMenuItem.Text = "Показать условие ";
+            this.showConditionToolStripMenuItem.Click += new System.EventHandler(this.showConditionToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 649);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(907, 660);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.HelpButton = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "CourseWork";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -840,7 +866,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.timeFunctionPlot)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -912,6 +941,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.RichTextBox pe_logRichBox;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem showConditionToolStripMenuItem;
     }
 }
 
