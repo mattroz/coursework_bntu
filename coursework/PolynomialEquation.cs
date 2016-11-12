@@ -29,8 +29,6 @@ namespace coursework
 
         public float currentValueByHorner(float time)
         { 
-            //return (float)((coeff_a * (time*time*time)) + 
-            //               (coeff_b * (time*time)) + (coeff_c * time) - (coeff_d));
             double sum = 0;
             for (int i = 0; i < coefficients_number - 1; i++)
             {
@@ -38,6 +36,7 @@ namespace coursework
                 sum *= time;   
             }
             
+            /*   the last coefficient aint multiplied by time, so just add it to the result   */
             return (float)(sum + coefficient[coefficient.Length - 1]);
         }
     }

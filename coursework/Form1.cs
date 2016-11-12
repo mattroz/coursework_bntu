@@ -172,7 +172,6 @@ namespace coursework
             pe_logRichBox.Clear();
 
             /*  get actual coeffs For Horner's method, sorry for this code :(   */
-
             coefficientsTextBoxesArray[0] = pe_firstCoeff_TB;
             coefficientsTextBoxesArray[1] = pe_secondCoeff_TB;
             coefficientsTextBoxesArray[2] = pe_thirdCoeff_TB;
@@ -198,7 +197,7 @@ namespace coursework
             }
             else
             {
-                this.timerRealTimeData.Enabled = false;
+                timerRealTimeData.Enabled = false;
 
                 for (float t = chartTimeProperties.start_time;
                            t < (chartTimeProperties.finish_time + chartTimeProperties.time_quantum/1000);

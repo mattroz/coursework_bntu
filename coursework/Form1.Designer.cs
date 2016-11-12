@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -76,6 +76,7 @@
             this.machineTimeRB = new System.Windows.Forms.RadioButton();
             this.pe_startPlottingButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.pe_thirdCoeff_TB = new System.Windows.Forms.TextBox();
             this.timeQuantum_NUD = new System.Windows.Forms.NumericUpDown();
             this.timeFinish_NUD = new System.Windows.Forms.NumericUpDown();
             this.timeStart_NUD = new System.Windows.Forms.NumericUpDown();
@@ -98,7 +99,13 @@
             this.timeFunctionPlot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.showConditionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pe_thirdCoeff_TB = new System.Windows.Forms.TextBox();
+            this.makeLINQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minimumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maximumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.evenSumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oddMultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sumAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sumGreaterThanAvgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -591,6 +598,15 @@
             this.panel9.Size = new System.Drawing.Size(239, 142);
             this.panel9.TabIndex = 10;
             // 
+            // pe_thirdCoeff_TB
+            // 
+            this.pe_thirdCoeff_TB.Location = new System.Drawing.Point(32, 84);
+            this.pe_thirdCoeff_TB.Name = "pe_thirdCoeff_TB";
+            this.pe_thirdCoeff_TB.ShortcutsEnabled = false;
+            this.pe_thirdCoeff_TB.Size = new System.Drawing.Size(64, 20);
+            this.pe_thirdCoeff_TB.TabIndex = 18;
+            this.pe_thirdCoeff_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pe_thirdCoeff_TB_KeyPress);
+            // 
             // timeQuantum_NUD
             // 
             this.timeQuantum_NUD.DecimalPlaces = 1;
@@ -774,20 +790,20 @@
             // timeFunctionPlot
             // 
             this.timeFunctionPlot.BackColor = System.Drawing.Color.OldLace;
-            chartArea2.Name = "ChartArea1";
-            this.timeFunctionPlot.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.timeFunctionPlot.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.timeFunctionPlot.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.timeFunctionPlot.Legends.Add(legend1);
             this.timeFunctionPlot.Location = new System.Drawing.Point(9, 15);
             this.timeFunctionPlot.Name = "timeFunctionPlot";
             this.timeFunctionPlot.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.LabelForeColor = System.Drawing.Color.DarkRed;
-            series2.Legend = "Legend1";
-            series2.Name = "TimeFunction";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.timeFunctionPlot.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.LabelForeColor = System.Drawing.Color.DarkRed;
+            series1.Legend = "Legend1";
+            series1.Name = "TimeFunction";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.timeFunctionPlot.Series.Add(series1);
             this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
             this.timeFunctionPlot.TabIndex = 0;
             this.timeFunctionPlot.Text = "chart1";
@@ -795,7 +811,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showConditionToolStripMenuItem});
+            this.showConditionToolStripMenuItem,
+            this.makeLINQToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(907, 24);
@@ -809,14 +826,54 @@
             this.showConditionToolStripMenuItem.Text = "Показать условие ";
             this.showConditionToolStripMenuItem.Click += new System.EventHandler(this.showConditionToolStripMenuItem_Click);
             // 
-            // pe_thirdCoeff_TB
+            // makeLINQToolStripMenuItem
             // 
-            this.pe_thirdCoeff_TB.Location = new System.Drawing.Point(32, 84);
-            this.pe_thirdCoeff_TB.Name = "pe_thirdCoeff_TB";
-            this.pe_thirdCoeff_TB.ShortcutsEnabled = false;
-            this.pe_thirdCoeff_TB.Size = new System.Drawing.Size(64, 20);
-            this.pe_thirdCoeff_TB.TabIndex = 18;
-            this.pe_thirdCoeff_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pe_thirdCoeff_TB_KeyPress);
+            this.makeLINQToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.minimumToolStripMenuItem,
+            this.maximumToolStripMenuItem,
+            this.evenSumToolStripMenuItem,
+            this.oddMultToolStripMenuItem,
+            this.sumAllToolStripMenuItem,
+            this.sumGreaterThanAvgToolStripMenuItem});
+            this.makeLINQToolStripMenuItem.Name = "makeLINQToolStripMenuItem";
+            this.makeLINQToolStripMenuItem.Size = new System.Drawing.Size(188, 20);
+            this.makeLINQToolStripMenuItem.Text = "Выполнить LINQ запрос по VALUE";
+            // 
+            // minimumToolStripMenuItem
+            // 
+            this.minimumToolStripMenuItem.Name = "minimumToolStripMenuItem";
+            this.minimumToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.minimumToolStripMenuItem.Text = "Минимум";
+            // 
+            // maximumToolStripMenuItem
+            // 
+            this.maximumToolStripMenuItem.Name = "maximumToolStripMenuItem";
+            this.maximumToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.maximumToolStripMenuItem.Text = "Максимум";
+            // 
+            // evenSumToolStripMenuItem
+            // 
+            this.evenSumToolStripMenuItem.Name = "evenSumToolStripMenuItem";
+            this.evenSumToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.evenSumToolStripMenuItem.Text = "Сумма четных элементов";
+            // 
+            // oddMultToolStripMenuItem
+            // 
+            this.oddMultToolStripMenuItem.Name = "oddMultToolStripMenuItem";
+            this.oddMultToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.oddMultToolStripMenuItem.Text = "Произведение нечетных элементов";
+            // 
+            // sumAllToolStripMenuItem
+            // 
+            this.sumAllToolStripMenuItem.Name = "sumAllToolStripMenuItem";
+            this.sumAllToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.sumAllToolStripMenuItem.Text = "Сумма всех элементов";
+            // 
+            // sumGreaterThanAvgToolStripMenuItem
+            // 
+            this.sumGreaterThanAvgToolStripMenuItem.Name = "sumGreaterThanAvgToolStripMenuItem";
+            this.sumGreaterThanAvgToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.sumGreaterThanAvgToolStripMenuItem.Text = "Сумма эл-тов > avg";
             // 
             // Form1
             // 
@@ -947,6 +1004,13 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showConditionToolStripMenuItem;
         private System.Windows.Forms.TextBox pe_thirdCoeff_TB;
+        private System.Windows.Forms.ToolStripMenuItem makeLINQToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minimumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maximumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem evenSumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oddMultToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sumAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sumGreaterThanAvgToolStripMenuItem;
     }
 }
 
