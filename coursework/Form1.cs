@@ -8,8 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace coursework
 {
+
     public partial class Form1 : Form
     {
         public struct TimeFunctionChart_s
@@ -27,9 +30,11 @@ namespace coursework
         /******************************/
         #region
 
+        public const int NUM_OF_POLYNOMIAL_COEFFS = 4;
         // globals because of need of Timer's correct work
         PolynomialEquation pe = new PolynomialEquation();   
         TimeFunctionChart_s chartTimeProperties = new TimeFunctionChart_s();
+        TextBox[] coefficientsTextBoxesArray = new TextBox[NUM_OF_POLYNOMIAL_COEFFS];
         #endregion
 
         public Form1()
@@ -49,7 +54,7 @@ namespace coursework
             qe_thirdCoeffTB.Text = "-3";
 
             pe_thirdCoeff_TB.Text = "5";
-            pe_fourthCoeff_TB.Text = "5";
+            pe_fourthCoeff_TB.Text = "-5";
 
             timeStart_NUD.Value = 3;
             timeFinish_NUD.Value = 12;
@@ -61,6 +66,7 @@ namespace coursework
             pe_startPlottingButton.Enabled = false;
              #endregion
         }
+
 
 
         /************************************/
@@ -164,11 +170,16 @@ namespace coursework
             /*  clear chart and list box  */
             timeFunctionPlot.Series["TimeFunction"].Points.Clear();
             pe_logRichBox.Clear();
-            
-            pe.aCoefficient = Convert.ToDouble(pe_firstCoeff_TB.Text);
-            pe.bCoefficient = Convert.ToDouble(pe_secondCoeff_TB.Text);
-            pe.cCoefficient = Convert.ToDouble(pe_thirdCoeff_TB.Text);
-            pe.dCoefficient = Convert.ToDouble(pe_fourthCoeff_TB.Text);
+
+            /*  get actual coeffs For Horner's method, sorry for this code :(   */
+
+            coefficientsTextBoxesArray[0] = pe_firstCoeff_TB;
+            coefficientsTextBoxesArray[1] = pe_secondCoeff_TB;
+            coefficientsTextBoxesArray[2] = pe_thirdCoeff_TB;
+            coefficientsTextBoxesArray[3] = pe_fourthCoeff_TB;
+
+            /*   set coeffs   */
+            pe.setCoefficients(coefficientsTextBoxesArray, NUM_OF_POLYNOMIAL_COEFFS);
 
             /*   get/calculate all variables requiring timer    */
             float point;

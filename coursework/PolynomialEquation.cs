@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace coursework
 {
@@ -11,36 +12,33 @@ namespace coursework
         public PolynomialEquation(){ }
 
         /*   CLASS FIELDS   */
-        private double coeff_a, coeff_b, coeff_c, coeff_d;
+        private double []coefficient;
+        private int coefficients_number;
 
-        public double aCoefficient 
+        public void setCoefficients(TextBox []_coefficientsAtTextBoxes, int _num)
         {
-            set { coeff_a = value; }
-            get { return coeff_a; }
-        }
-
-        public double bCoefficient
-        {
-            set { coeff_b = value; }
-            get { return coeff_b; }
-        }
-
-        public double cCoefficient
-        {
-            set { coeff_c = value; }
-            get { return coeff_c; }
-        }
-
-        public double dCoefficient
-        {
-            set { coeff_d = value; }
-            get { return coeff_d; }
+            coefficients_number = _num;
+            coefficient = new double[coefficients_number];
+            
+            /*   set coefficients in big-endian order   */
+            for (int i = 0; i < coefficients_number; i++)
+            {
+                coefficient[i] = Convert.ToDouble(_coefficientsAtTextBoxes[i].Text);
+            }
         }
 
         public float currentValueByHorner(float time)
         { 
-            return (float)((coeff_a * (time*time*time)) + 
-                           (coeff_b * (time*time)) + (coeff_c * time) - (coeff_d));
+            //return (float)((coeff_a * (time*time*time)) + 
+            //               (coeff_b * (time*time)) + (coeff_c * time) - (coeff_d));
+            double sum = 0;
+            for (int i = 0; i < coefficients_number - 1; i++)
+            {
+                sum += coefficient[i];
+                sum *= time;   
+            }
+            
+            return (float)(sum + coefficient[coefficient.Length - 1]);
         }
     }
 }
