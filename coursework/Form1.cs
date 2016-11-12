@@ -31,10 +31,16 @@ namespace coursework
         #region
 
         public const int NUM_OF_POLYNOMIAL_COEFFS = 4;
+        
         // globals because of need of Timer's correct work
         PolynomialEquation pe = new PolynomialEquation();   
         TimeFunctionChart_s chartTimeProperties = new TimeFunctionChart_s();
         TextBox[] coefficientsTextBoxesArray = new TextBox[NUM_OF_POLYNOMIAL_COEFFS];
+
+        /*   Array which contains points calculated by Horner's method,
+         *   need for LINQs
+         */
+        List<float> pointsArray = new List<float>();
         #endregion
 
         public Form1()
@@ -272,6 +278,11 @@ namespace coursework
             timeFunctionPlot.Invalidate();
         }
         #endregion
+
+        private void makeLINQToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LINQEntity linq = new LINQEntity();
+        }
     }
 }
 

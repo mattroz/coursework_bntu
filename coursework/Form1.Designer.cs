@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -790,20 +790,20 @@
             // timeFunctionPlot
             // 
             this.timeFunctionPlot.BackColor = System.Drawing.Color.OldLace;
-            chartArea1.Name = "ChartArea1";
-            this.timeFunctionPlot.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.timeFunctionPlot.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.timeFunctionPlot.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.timeFunctionPlot.Legends.Add(legend2);
             this.timeFunctionPlot.Location = new System.Drawing.Point(9, 15);
             this.timeFunctionPlot.Name = "timeFunctionPlot";
             this.timeFunctionPlot.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.LabelForeColor = System.Drawing.Color.DarkRed;
-            series1.Legend = "Legend1";
-            series1.Name = "TimeFunction";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.timeFunctionPlot.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.LabelForeColor = System.Drawing.Color.DarkRed;
+            series2.Legend = "Legend1";
+            series2.Name = "TimeFunction";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.timeFunctionPlot.Series.Add(series2);
             this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
             this.timeFunctionPlot.TabIndex = 0;
             this.timeFunctionPlot.Text = "chart1";
@@ -838,6 +838,7 @@
             this.makeLINQToolStripMenuItem.Name = "makeLINQToolStripMenuItem";
             this.makeLINQToolStripMenuItem.Size = new System.Drawing.Size(188, 20);
             this.makeLINQToolStripMenuItem.Text = "Выполнить LINQ запрос по VALUE";
+            this.makeLINQToolStripMenuItem.Click += new System.EventHandler(this.makeLINQToolStripMenuItem_Click);
             // 
             // minimumToolStripMenuItem
             // 
