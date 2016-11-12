@@ -193,7 +193,7 @@ namespace coursework
                            t < (chartTimeProperties.finish_time + chartTimeProperties.time_quantum/1000);
                            t += (chartTimeProperties.time_quantum/1000)) 
                 {
-                    point = pe.calculateCurrentValue(t);
+                    point = pe.currentValueByHorner(t);
                     addValuesToChart(point, t);
                 }
             }
@@ -253,7 +253,7 @@ namespace coursework
                                              chartTimeProperties.start_time;
 
             /*   Calculate current point using PolynomialEquation class  */
-            float point = pe.calculateCurrentValue(chart_time_value);
+            float point = pe.currentValueByHorner(chart_time_value);
 
             addValuesToChart(point, chart_time_value);
             

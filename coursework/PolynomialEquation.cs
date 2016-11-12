@@ -37,7 +37,7 @@ namespace coursework
             get { return coeff_d; }
         }
 
-        public float calculateCurrentValue(float time)
+        public float currentValueByHorner(float time)
         { 
             return (float)((coeff_a * (time*time*time)) + 
                            (coeff_b * (time*time)) + (coeff_c * time) - (coeff_d));
