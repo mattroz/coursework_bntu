@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -790,20 +790,20 @@
             // timeFunctionPlot
             // 
             this.timeFunctionPlot.BackColor = System.Drawing.Color.OldLace;
-            chartArea2.Name = "ChartArea1";
-            this.timeFunctionPlot.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.timeFunctionPlot.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.timeFunctionPlot.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.timeFunctionPlot.Legends.Add(legend8);
             this.timeFunctionPlot.Location = new System.Drawing.Point(9, 15);
             this.timeFunctionPlot.Name = "timeFunctionPlot";
             this.timeFunctionPlot.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.LabelForeColor = System.Drawing.Color.DarkRed;
-            series2.Legend = "Legend1";
-            series2.Name = "TimeFunction";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.timeFunctionPlot.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.LabelForeColor = System.Drawing.Color.DarkRed;
+            series8.Legend = "Legend1";
+            series8.Name = "TimeFunction";
+            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.timeFunctionPlot.Series.Add(series8);
             this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
             this.timeFunctionPlot.TabIndex = 0;
             this.timeFunctionPlot.Text = "chart1";
@@ -845,36 +845,42 @@
             this.minimumToolStripMenuItem.Name = "minimumToolStripMenuItem";
             this.minimumToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.minimumToolStripMenuItem.Text = "Минимум";
+            this.minimumToolStripMenuItem.Click += new System.EventHandler(this.minimumToolStripMenuItem_Click);
             // 
             // maximumToolStripMenuItem
             // 
             this.maximumToolStripMenuItem.Name = "maximumToolStripMenuItem";
             this.maximumToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.maximumToolStripMenuItem.Text = "Максимум";
+            this.maximumToolStripMenuItem.Click += new System.EventHandler(this.maximumToolStripMenuItem_Click);
             // 
             // evenSumToolStripMenuItem
             // 
             this.evenSumToolStripMenuItem.Name = "evenSumToolStripMenuItem";
             this.evenSumToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.evenSumToolStripMenuItem.Text = "Сумма четных элементов";
+            this.evenSumToolStripMenuItem.Click += new System.EventHandler(this.evenSumToolStripMenuItem_Click);
             // 
             // oddMultToolStripMenuItem
             // 
             this.oddMultToolStripMenuItem.Name = "oddMultToolStripMenuItem";
             this.oddMultToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.oddMultToolStripMenuItem.Text = "Произведение нечетных элементов";
+            this.oddMultToolStripMenuItem.Click += new System.EventHandler(this.oddMultToolStripMenuItem_Click);
             // 
             // sumAllToolStripMenuItem
             // 
             this.sumAllToolStripMenuItem.Name = "sumAllToolStripMenuItem";
             this.sumAllToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.sumAllToolStripMenuItem.Text = "Сумма всех элементов";
+            this.sumAllToolStripMenuItem.Click += new System.EventHandler(this.sumAllToolStripMenuItem_Click);
             // 
             // sumGreaterThanAvgToolStripMenuItem
             // 
             this.sumGreaterThanAvgToolStripMenuItem.Name = "sumGreaterThanAvgToolStripMenuItem";
             this.sumGreaterThanAvgToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.sumGreaterThanAvgToolStripMenuItem.Text = "Сумма эл-тов > avg";
+            this.sumGreaterThanAvgToolStripMenuItem.Click += new System.EventHandler(this.sumGreaterThanAvgToolStripMenuItem_Click);
             // 
             // Form1
             // 

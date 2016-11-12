@@ -35,6 +35,7 @@ namespace coursework
         // globals because of need of Timer's correct work
         PolynomialEquation pe = new PolynomialEquation();   
         TimeFunctionChart_s chartTimeProperties = new TimeFunctionChart_s();
+        LINQEntity linq;
         TextBox[] coefficientsTextBoxesArray = new TextBox[NUM_OF_POLYNOMIAL_COEFFS];
 
         /*   Array which contains points calculated by Horner's method,
@@ -42,6 +43,7 @@ namespace coursework
          */
         List<float> pointsArray = new List<float>();
         #endregion
+
 
         public Form1()
         {
@@ -70,6 +72,8 @@ namespace coursework
 
             qe_calculateVariableButton.Enabled = false;
             pe_startPlottingButton.Enabled = false;
+
+            makeLINQToolStripMenuItem.Enabled = false;
              #endregion
         }
 
@@ -88,14 +92,17 @@ namespace coursework
 
         private void addValuesToChart(float _point, float _timestamp)
         {
-            /*   Add this point to chart   */
+            /*   Add this point to chart and points array for LINQs  */
             timeFunctionPlot.Series["TimeFunction"].Points.AddXY(_timestamp, _point);
+            pointsArray.Add(_point);
 
             /*   Add (X;Y) values to RichBox   */
             pe_logRichBox.AppendText(String.Format("{0:0.0}", _timestamp).PadLeft(8, ' ') +
                                         String.Format("{0:0.0}", _point).PadLeft(17, ' ') + Environment.NewLine);
         }
+
         #endregion
+
 
         /*********************************************************/
         /*         NON-LINEAR EQUATION UI IMPLEMENTATION         */
@@ -173,9 +180,12 @@ namespace coursework
         #region
         private void pe_calculateVariableButton_Click(object sender, EventArgs e)
         {
-            /*  clear chart and list box  */
+            makeLINQToolStripMenuItem.Enabled = true;
+            
+            /*  clear chart, points array and list box  */
             timeFunctionPlot.Series["TimeFunction"].Points.Clear();
             pe_logRichBox.Clear();
+            pointsArray.Clear();
 
             /*  get actual coeffs For Horner's method, sorry for this code :(   */
             coefficientsTextBoxesArray[0] = pe_firstCoeff_TB;
@@ -248,6 +258,7 @@ namespace coursework
         }
         #endregion
 
+
        /****************************************/
        /*      TIMER TICK IMPLEMENTATION       */
        /****************************************/
@@ -279,10 +290,48 @@ namespace coursework
         }
         #endregion
 
+
+        /****************************************/
+        /*        LINQ UX IMPLEMENTATION        */
+        /****************************************/
+        #region
+
         private void makeLINQToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LINQEntity linq = new LINQEntity();
+            linq = new LINQEntity(pointsArray);
         }
+
+        private void minimumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Minimum: " + linq.Minimum());
+        }
+
+        private void maximumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Maximum: " + linq.Maximum());
+        }
+
+        private void evenSumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void oddMultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sumAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sumGreaterThanAvgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
     }
 }
 
