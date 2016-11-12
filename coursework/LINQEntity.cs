@@ -34,5 +34,38 @@ namespace coursework
                                              select point;
             return pointsQuery.Max();
         }
+
+        public float calculateSumOfEven()
+        {
+            IEnumerable<float> pointsQuery = from point in points
+                                             where ((int)point % 2) == 0
+                                             select point; 
+            return pointsQuery.Sum();
+        }
+
+        public float multiplicationOfOdd()
+        { 
+            IEnumerable<float> pointsQuery = from point in points
+                                             where ((int)point % 2) != 0
+                                             select point;
+            Func<float, float, float> lambda = (x, y) => x * y; 
+
+            return pointsQuery.Aggregate(1, lambda);
+        }
+
+        public float Summa()
+        {
+            IEnumerable<float> pointsQuery = from point in points
+                                             select point;
+            return pointsQuery.Sum();
+        }
+
+        public float sumGreaterThanAverage()
+        {
+            IEnumerable<float> pointsQuery = from point in points
+                                             where point > points.Average() 
+                                             select point;
+            return pointsQuery.Sum();
+        }
     }
 }

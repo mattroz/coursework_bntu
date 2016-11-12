@@ -303,32 +303,32 @@ namespace coursework
 
         private void minimumToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Minimum: " + linq.Minimum());
+            MessageBox.Show("Minimum: " + linq.Minimum(), "LINQ");
         }
 
         private void maximumToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Maximum: " + linq.Maximum());
+            MessageBox.Show("Maximum: " + linq.Maximum(), "LINQ");
         }
 
         private void evenSumToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Sum of even elements: " + linq.calculateSumOfEven(), "LINQ");
         }
 
         private void oddMultToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Multiplication of odd elements: " + linq.multiplicationOfOdd(), "LINQ");        
         }
 
         private void sumAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Sum of all elements: " + linq.Summa(), "LINQ"); 
         }
 
         private void sumGreaterThanAvgToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Sum of elements > average: " + linq.sumGreaterThanAverage(), "LINQ");
         }
 
         #endregion
