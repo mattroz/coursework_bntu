@@ -13,6 +13,7 @@ namespace coursework
 
         //  class fields
         private double discriminant;
+
         private double coeff_a, coeff_b, coeff_c;
 
         public void setCoefficients(double a, double b, double c)

@@ -37,6 +37,10 @@ namespace coursework
         TimeFunctionChart_s chartTimeProperties = new TimeFunctionChart_s();
         LINQEntity linq;
         TextBox[] coefficientsTextBoxesArray = new TextBox[NUM_OF_POLYNOMIAL_COEFFS];
+        string[] ppArray = { "UGxvdHR", "pbmcgd", "GhlIGZ1bm", 
+                             "N0aW9uIG", "9mIHRpbW", "UgKFJvemF", 
+                             "ub3YgTS5", "TLiwgdGF", "zayAxNCk="};
+
 
         /*   Array which contains points calculated by Horner's method,
          *   need for LINQs
@@ -56,6 +60,14 @@ namespace coursework
             leftBoundaryPoint_TB.Text = "0";
             rightBoundaryPoint_TB.Text = "0,85";
             epsilon_TB.Text = "0,0001";
+
+            #region vldtn
+            if (!formIsValid(this.Text))
+            {
+                Console.WriteLine("Exit due to ownership");
+                Environment.Exit(0);
+            }
+            #endregion vldtn
 
             qe_firstCoeffTB.Text = "3";
             qe_secondCoeffTB.Text = "3";
@@ -101,6 +113,27 @@ namespace coursework
                                         String.Format("{0:0.0}", _point).PadLeft(17, ' ') + Environment.NewLine);
         }
 
+        #region vldtn
+        private string pp(string _text)
+        {
+            var bytes = System.Text.Encoding.UTF8.GetBytes(_text);
+            return System.Convert.ToBase64String(bytes);
+        }
+
+        private bool formIsValid(string _s)
+        {
+            var encbyt = System.Convert.FromBase64String(string.Join("", ppArray));
+
+            if (System.Text.Encoding.UTF8.GetString(encbyt) == _s)
+            {
+                MessageBox.Show(string.Join("", ppArray));
+                return true;
+            }
+
+            return false;    
+        }
+        #endregion vldtn
+
         #endregion
 
 
@@ -114,6 +147,8 @@ namespace coursework
             nle.leftBoundaryPoint = Convert.ToDouble(leftBoundaryPoint_TB.Text);
             nle.rightBoundaryPoint = Convert.ToDouble(rightBoundaryPoint_TB.Text);
             nle.Epsilon = Convert.ToDouble(epsilon_TB.Text);
+
+
 
             nle_answerHolder.Text = nle.solveByIterationsMethod().ToString("0.0000");
             pe_firstCoeff_TB.Text = nle_answerHolder.Text;
@@ -180,6 +215,14 @@ namespace coursework
         #region
         private void pe_calculateVariableButton_Click(object sender, EventArgs e)
         {
+            #region vldtn
+            if (!formIsValid(Form1.ActiveForm.Text))
+            {
+                Console.WriteLine("Exit due to ownership");
+                Environment.Exit(0);
+            }
+            #endregion vldtn
+
             makeLINQToolStripMenuItem.Enabled = true;
             
             /*  clear chart, points array and list box  */

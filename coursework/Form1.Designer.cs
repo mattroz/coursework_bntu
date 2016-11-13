@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.nle_answerHolder = new System.Windows.Forms.Label();
@@ -790,20 +790,20 @@
             // timeFunctionPlot
             // 
             this.timeFunctionPlot.BackColor = System.Drawing.Color.OldLace;
-            chartArea8.Name = "ChartArea1";
-            this.timeFunctionPlot.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.timeFunctionPlot.Legends.Add(legend8);
+            chartArea7.Name = "ChartArea1";
+            this.timeFunctionPlot.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.timeFunctionPlot.Legends.Add(legend7);
             this.timeFunctionPlot.Location = new System.Drawing.Point(9, 15);
             this.timeFunctionPlot.Name = "timeFunctionPlot";
             this.timeFunctionPlot.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.LabelForeColor = System.Drawing.Color.DarkRed;
-            series8.Legend = "Legend1";
-            series8.Name = "TimeFunction";
-            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.timeFunctionPlot.Series.Add(series8);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.LabelForeColor = System.Drawing.Color.DarkRed;
+            series7.Legend = "Legend1";
+            series7.Name = "TimeFunction";
+            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.timeFunctionPlot.Series.Add(series7);
             this.timeFunctionPlot.Size = new System.Drawing.Size(863, 235);
             this.timeFunctionPlot.TabIndex = 0;
             this.timeFunctionPlot.Text = "chart1";
@@ -897,7 +897,7 @@
             this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Построение графика временной функции (Розанов М.С., вариант 14)";
+            this.Text = "Plotting the function of time (Rozanov M.S., task 14)";
             this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
