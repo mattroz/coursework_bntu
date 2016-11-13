@@ -37,10 +37,11 @@ namespace coursework
         TimeFunctionChart_s chartTimeProperties = new TimeFunctionChart_s();
         LINQEntity linq;
         TextBox[] coefficientsTextBoxesArray = new TextBox[NUM_OF_POLYNOMIAL_COEFFS];
+        #region vldtn
         string[] ppArray = { "UGxvdHR", "pbmcgd", "GhlIGZ1bm", 
                              "N0aW9uIG", "9mIHRpbW", "UgKFJvemF", 
                              "ub3YgTS5", "TLiwgdGF", "zayAxNCk="};
-
+        #endregion vldtn
 
         /*   Array which contains points calculated by Horner's method,
          *   need for LINQs
@@ -124,13 +125,7 @@ namespace coursework
         {
             var encbyt = System.Convert.FromBase64String(string.Join("", ppArray));
 
-            if (System.Text.Encoding.UTF8.GetString(encbyt) == _s)
-            {
-                MessageBox.Show(string.Join("", ppArray));
-                return true;
-            }
-
-            return false;    
+            return ((System.Text.Encoding.UTF8.GetString(encbyt) == _s) ? true : false);    
         }
         #endregion vldtn
 
