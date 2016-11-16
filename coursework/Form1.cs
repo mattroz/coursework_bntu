@@ -124,7 +124,6 @@ namespace coursework
         private bool formIsValid(string _s)
         {
             var encbyt = System.Convert.FromBase64String(string.Join("", ppArray));
-
             return ((System.Text.Encoding.UTF8.GetString(encbyt) == _s) ? true : false);    
         }
         #endregion vldtn
