@@ -35,7 +35,7 @@ namespace coursework
         // globals because of need of Timer's correct work
         PolynomialEquation pe = new PolynomialEquation();   
         TimeFunctionChart_s chartTimeProperties = new TimeFunctionChart_s();
-        LINQEntity linq;
+        LINQEntity linq = null;
         TextBox[] coefficientsTextBoxesArray = new TextBox[NUM_OF_POLYNOMIAL_COEFFS];
         #region vldtn
         string[] ppArray = { "UGxvdHR", "pbmcgd", "GhlIGZ1bm", 
@@ -335,7 +335,7 @@ namespace coursework
 
         private void makeLINQToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            linq = new LINQEntity(pointsArray);
+            linq = (linq == null) ? new LINQEntity(pointsArray) : linq;
         }
 
         private void minimumToolStripMenuItem_Click(object sender, EventArgs e)
